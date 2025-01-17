@@ -129,6 +129,8 @@ const CodeEditor = () => {
         borderBottom="1px solid"
         borderColor="gray.600"
         justify="center"
+        zIndex={2}
+        position={"relative"}
       >
         <LoadCodeButton onLoadCode={handleLoadCode} />
         <SaveCodeButton code={value} language={language} />
