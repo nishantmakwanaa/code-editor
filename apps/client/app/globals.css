@@ -1,0 +1,360 @@
+/**
+ * Global CSS styles and variables.
+ * Includes:
+ * - Tailwind CSS directives
+ * - Selection styles
+ * - Scrollbar customization
+ * - Theme variables
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::selection {
+  @apply bg-[#fb568a] text-red-100;
+}
+
+::-webkit-scrollbar {
+  @apply size-1.5 hover:size-2.5;
+}
+/* Scrollbar track */
+::-webkit-scrollbar-track-piece {
+  @apply rounded-full bg-[#f5f5f5] dark:bg-[#262626];
+}
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-[#d4d4d4] hover:bg-[#a3a3a3] dark:bg-[#404040] dark:hover:bg-[#525252];
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --toolbar-bg-primary: #2678ca;
+  --toolbar-bg-secondary: #3c3c3c;
+  --toolbar-foreground: #fff;
+  --toolbar-accent: #2678ca;
+  --panel-text-accent: #fff;
+  --panel-background: #1e1e1e;
+  --status-bar-text: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 222 93% 57%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 222 93% 57%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .dark-editor {
+    --accentBase: #0d1520;
+    --accentBgSubtle: #111927;
+    --accentBg: #0d2847;
+    --accentBgHover: #003362;
+    --accentBgActive: #004074;
+    --accentLine: #104d87;
+    --accentBorder: #205d9e;
+    --accentBorderHover: #2870bd;
+    --accentSolid: #0090ff;
+    --accentSolidHover: #3b9eff;
+    --accentText: #70b8ff;
+    --accentTextContrast: #c2e6ff;
+
+    --baseBase: var(--mauve-1);
+    --baseBgSubtle: var(--mauve-2);
+    --baseBg: var(--mauve-3);
+    --baseBgHover: var(--mauve-4);
+    --baseBgActive: var(--mauve-5);
+    --baseLine: var(--mauve-6);
+    --baseBorder: var(--mauve-7);
+    --baseBorderHover: var(--mauve-8);
+    --baseSolid: var(--mauve-9);
+    --baseSolidHover: var(--mauve-10);
+    --baseText: var(--mauve-11);
+    --baseTextContrast: var(--mauve-12);
+
+    --admonitionTipBg: #003848;
+    --admonitionTipBorder: #11809c;
+
+    --admonitionInfoBg: #1d3a24;
+    --admonitionInfoBorder: #3e7949;
+
+    --admonitionCautionBg: #3f2700;
+    --admonitionCautionBorder: #8f6424;
+
+    --admonitionDangerBg: #500f1c;
+    --admonitionDangerBorder: #b54548;
+
+    --admonitionNoteBg: var(--mauve-4);
+    --admonitionNoteBorder: var(--mauve-8);
+
+    color: var(--foreground);
+    --basePageBg: var(--panel-background);
+    background: var(--basePageBg);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes cursorLabelFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mdxeditor-diff-source-wrapper > div._markdownParseError_uazmk_1211 {
+  @apply !h-fit;
+}
+
+._dialogOverlay_uazmk_871 {
+  @apply bg-[color:var(--panel-background)];
+}
+
+._primaryButton_uazmk_506 {
+  @apply !cursor-pointer !border-0 !bg-[color:var(--toolbar-accent)] !text-[color:var(--panel-text-accent)] !transition-all hover:brightness-90;
+}
+
+._secondaryButton_uazmk_507 {
+  @apply !bg-secondary !text-foreground !cursor-pointer !border-0 !transition-all hover:brightness-90;
+}
+
+._imageWrapper_uazmk_922 ._editImageToolbar_uazmk_935 {
+  @apply bg-transparent;
+}
+
+._toolbarButton_uazmk_237 {
+  @apply hover:!bg-foreground/10 !cursor-pointer !transition-all;
+}
+
+._toolbarToggleItem_uazmk_206 {
+  @apply hover:!bg-foreground/10 !cursor-pointer !transition-all;
+}
+
+._toolbarToggleItem_uazmk_206[data-state='on'] {
+  @apply !bg-[color:var(--panel-background)];
+}
+
+._editImageToolbar_uazmk_935 svg {
+  @apply size-4 text-white;
+}
+
+._editImageToolbar_uazmk_935 button {
+  @apply animate-fade-in rounded bg-black/60 p-1 transition-all hover:bg-black/50;
+}
+
+._imageWrapper_uazmk_922 ._editImageToolbar_uazmk_935 {
+  @apply hidden;
+}
+
+._imageWrapper_uazmk_922:hover ._editImageToolbar_uazmk_935 {
+  @apply !inline-flex bg-transparent;
+}
+
+._codeMirrorWrapper_uazmk_391 {
+  @apply !my-1;
+}
+
+._selectTrigger_uazmk_307 {
+  @apply !rounded-md;
+}
+
+._toolbarButtonSelectTrigger_uazmk_306 {
+  @apply !rounded-md;
+}
+
+.mdxeditor-popup-container > div {
+  @apply !shadow-lg;
+}
+
+.mdxeditor-popup-container div {
+  @apply max-h-[55vh] overflow-y-auto rounded-md;
+}
+
+._codeMirrorWrapper_uazmk_391 {
+  @apply !p-0;
+}
+
+._codeMirrorToolbar_uazmk_408 {
+  @apply !bg-transparent;
+}
+
+._codeMirrorToolbar_uazmk_408 * {
+  @apply h-6 cursor-pointer;
+}
+
+._codeMirrorToolbar_uazmk_408 svg {
+  @apply text-foreground size-4;
+}
+
+._codeMirrorToolbar_uazmk_408 > button {
+  @apply hover:bg-foreground/10 rounded p-1 hover:transition-all;
+}
+
+._codeMirrorToolbar_uazmk_408
+  ._tooltipTrigger_uazmk_676
+  ._selectTrigger_uazmk_307 {
+  @apply bg-background text-foreground w-fit;
+}
+
+.cm-editor {
+  @apply bg-background !pt-6;
+}
+
+.cm-content {
+  @apply text-sm;
+}
+
+.cm-content::selection * {
+  @apply !text-inherit;
+}
+
+.cm-gutterElement {
+  @apply text-foreground;
+}
+
+.cm-activeLineGutter {
+  @apply !bg-secondary;
+}
+
+.mdxeditor-source-editor > .cm-editor {
+  @apply bg-white;
+}
+
+.mdxeditor-source-editor .cm-gutterElement {
+  @apply text-inherit;
+}
+
+.mdxeditor-source-editor .cm-activeLineGutter {
+  @apply !bg-black/10;
+}
+
+._tableColumnEditorTrigger_uazmk_743 {
+  @apply hover:!bg-foreground/10 !cursor-pointer !p-0 align-middle !transition-all;
+}
+
+._tableToolsColumn_uazmk_821 {
+  @apply align-middle;
+}
+
+._tableToolsColumn_uazmk_821 > button > svg {
+  @apply !size-5;
+}
+
+._iconButton_uazmk_456 {
+  @apply !cursor-pointer;
+}
+
+._toolCell_uazmk_724 > button {
+  @apply !mx-0 !px-0;
+}
+
+._addColumnButton_uazmk_746 {
+  @apply !cursor-pointer;
+}
+
+._addRowButton_uazmk_745 {
+  @apply !cursor-pointer;
+}
+
+._actionButton_uazmk_694 {
+  @apply !cursor-pointer;
+}
+
+._tableColumnEditorPopoverContent_uazmk_601 {
+  @apply !overflow-hidden !p-0;
+}
+
+._linkDialogPopoverContent_uazmk_600 {
+  @apply !overflow-hidden !p-0;
+}
+
+._linkDialogPopoverContent_uazmk_600 > button {
+  @apply hover:!bg-foreground/10 !transition-all;
+}
+
+._linkDialogPreviewAnchor_uazmk_653 {
+  @apply px-2;
+}
+
+._tableColumnEditorToolbar_uazmk_789 button:not([data-state='on']) {
+  @apply hover:!bg-foreground/10 !transition-all;
+}
+
+._linkDialogPreviewAnchor_uazmk_653 {
+  @apply !transition-all;
+}

@@ -1,1 +1,41 @@
-node_modules
+# Dependencies
+**/node_modules
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Environment Variables
+**/.env
+**/.env*.local
+**/.env.sentry-build-plugin
+
+# Development
+.vscode/
+**/*.pem
+**/.DS_Store
+**/*.tsbuildinfo
+**/next-env.d.ts
+
+# Debug Logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Testing
+**/coverage
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/playwright/.cache/
+
+# Build Output
+**/.next/
+**/out/
+**/build/
+**/dist/
+.turbo
+
+# Deployment
+**/.vercel
+
+.vercel

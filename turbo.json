@@ -1,0 +1,59 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env"],
+  "tasks": {
+    "client#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["SENTRY_AUTH_TOKEN"],
+      "cache": true
+    },
+    "server#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "cache": true
+    },
+    "@codex/types#build": {
+      "outputs": ["dist/**/*.d.ts", "dist/**/*.js"],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "client#test:e2e": {
+      "cache": false,
+      "outputs": ["playwright-report/**", "test-results/**"],
+      "env": ["BETTERSTACK_API_KEY"]
+    },
+    "client#test:e2e:ui": {
+      "cache": false,
+      "env": ["BETTERSTACK_API_KEY"]
+    },
+    "server#test:socket": {
+      "cache": true,
+      "outputs": ["test-results/**"]
+    },
+    "server#test:socket:remote": {
+      "cache": false,
+      "outputs": ["test-results/**"]
+    },
+    "lint:check": {
+      "cache": true
+    },
+    "lint:fix": {
+      "cache": true
+    },
+    "format:check": {
+      "cache": true
+    },
+    "format:fix": {
+      "cache": true
+    }
+  }
+}
