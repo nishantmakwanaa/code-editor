@@ -31,7 +31,8 @@ const getAllowedOrigin = (origin: string | undefined): string => {
 
   if (
     ALLOWED_ORIGINS.includes(origin as (typeof ALLOWED_ORIGINS)[number]) ||
-    isVercelDeployment(origin)
+    isVercelDeployment(origin) ||
+    (process.env.CLIENT_URL && origin === process.env.CLIENT_URL)
   ) {
     return origin;
   }

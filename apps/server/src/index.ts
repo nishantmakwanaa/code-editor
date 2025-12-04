@@ -38,7 +38,7 @@ import {
   isVercelDeployment,
 } from './cors-config';
 
-const PORT = 3001;
+const PORT = parseInt(process.env.PORT || '3001', 10);
 
 const app = App();
 
