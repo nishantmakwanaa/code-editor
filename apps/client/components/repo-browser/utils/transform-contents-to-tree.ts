@@ -6,7 +6,6 @@
  * - Path handling
  * - Type-safe conversion
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { FileCode, Folder } from 'lucide-react';

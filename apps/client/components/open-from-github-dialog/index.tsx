@@ -6,7 +6,6 @@
  * - Authentication handling
  * - Responsive dialog/drawer
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

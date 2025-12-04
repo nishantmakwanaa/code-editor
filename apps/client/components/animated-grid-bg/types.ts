@@ -5,7 +5,6 @@
  * - Light animation types
  * - Style definitions
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export interface GridConfig {

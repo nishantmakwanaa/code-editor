@@ -4,8 +4,6 @@
  * - Execution result interface
  * - Result type enumeration
  * - Output metadata
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export interface ExecutionResult {

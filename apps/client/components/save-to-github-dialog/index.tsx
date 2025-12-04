@@ -6,7 +6,6 @@
  * - Repository browser integration
  * - File commit handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

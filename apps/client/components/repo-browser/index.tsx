@@ -6,7 +6,6 @@
  * - File selection
  * - Loading states
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

@@ -6,7 +6,6 @@
  * - Synchronized language state
  * - Mobile support
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';

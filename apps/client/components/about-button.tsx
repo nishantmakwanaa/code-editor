@@ -5,7 +5,6 @@
  * - Dialog trigger
  * - Accessibility support
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

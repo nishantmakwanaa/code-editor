@@ -6,7 +6,6 @@
  * - Repository content retrieval
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { cookies } from 'next/headers';

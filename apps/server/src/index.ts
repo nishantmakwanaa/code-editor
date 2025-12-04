@@ -6,7 +6,6 @@
  * - Message handling
  * - CORS configuration
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { SignalData } from 'simple-peer';
@@ -87,7 +86,7 @@ app.get('/', (res, req) => {
   res.writeHeader('Content-Type', 'text/plain');
 
   res.end(
-    'Hello from codex-server! Go to https://codex.dulapahv.dev/ to start coding.',
+    'Hello from codex-server! Go to https://codex.example.com/ to start coding.',
   );
 });
 

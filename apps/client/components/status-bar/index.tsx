@@ -5,7 +5,6 @@
  * - Cursor position tracking
  * - Selection feedback
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { memo } from 'react';

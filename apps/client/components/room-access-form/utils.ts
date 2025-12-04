@@ -6,7 +6,6 @@
  * - Room ID formatting
  * - Socket communications
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { ChangeEvent } from 'react';

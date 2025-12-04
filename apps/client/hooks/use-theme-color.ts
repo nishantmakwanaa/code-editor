@@ -5,7 +5,6 @@
  * - Dark/light mode detection
  * - Meta tag handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useEffect } from 'react';

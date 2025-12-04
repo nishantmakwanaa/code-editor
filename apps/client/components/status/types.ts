@@ -5,7 +5,6 @@
  * - API response types
  * - Status attributes
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export type ServiceStatus = {

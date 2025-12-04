@@ -5,7 +5,6 @@
  * - Icon assignment
  * - Type-safe conversion
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Folder } from 'lucide-react';

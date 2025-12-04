@@ -5,7 +5,6 @@
  * - Error handling
  * - Status response formatting
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { NextResponse } from 'next/server';

@@ -5,7 +5,6 @@
  * - Room ID removal
  * - Homepage tracking
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

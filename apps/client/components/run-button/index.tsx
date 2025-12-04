@@ -6,7 +6,6 @@
  * - Args/stdin input handling
  * - Status indication
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

@@ -6,7 +6,6 @@
  * - Theme-aware rendering
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

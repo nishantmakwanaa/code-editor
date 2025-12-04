@@ -2,7 +2,6 @@
  * Tests for measuring terminal output synchronization latency.
  * Tests different types of outputs and execution results.
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import fs from 'fs';

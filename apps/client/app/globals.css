@@ -6,7 +6,6 @@
  * - Scrollbar customization
  * - Theme variables
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 @tailwind base;
@@ -14,7 +13,7 @@
 @tailwind utilities;
 
 *::selection {
-  @apply bg-[#fb568a] text-red-100;
+  @apply bg-[#8b5cf6] text-white;
 }
 
 ::-webkit-scrollbar {
@@ -33,10 +32,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --toolbar-bg-primary: #2678ca;
+  --toolbar-bg-primary: #7c3aed;
   --toolbar-bg-secondary: #3c3c3c;
   --toolbar-foreground: #fff;
-  --toolbar-accent: #2678ca;
+  --toolbar-accent: #7c3aed;
   --panel-text-accent: #fff;
   --panel-background: #1e1e1e;
   --status-bar-text: #fff;
@@ -64,7 +63,7 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 222 93% 57%;
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
@@ -91,7 +90,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 222 93% 57%;
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;

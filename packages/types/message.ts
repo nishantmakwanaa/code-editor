@@ -5,8 +5,6 @@
  * - Code editing messages
  * - Scroll sync messages
  * - Video stream messages
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export enum RoomServiceMsg {

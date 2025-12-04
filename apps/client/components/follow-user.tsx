@@ -6,7 +6,6 @@
  * - Active follower indicator
  * - Mobile support
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useEffect, useState } from 'react';

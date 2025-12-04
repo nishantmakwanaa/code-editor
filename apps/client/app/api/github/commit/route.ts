@@ -6,7 +6,6 @@
  * - Base64 content handling
  * - File path management
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { cookies } from 'next/headers';

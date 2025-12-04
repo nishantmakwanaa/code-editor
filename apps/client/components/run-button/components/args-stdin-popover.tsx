@@ -5,7 +5,6 @@
  * - Standard input handling
  * - Input validation
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useState } from 'react';

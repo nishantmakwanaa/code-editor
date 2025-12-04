@@ -5,7 +5,6 @@
  * - Editor state management
  * - Change synchronization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { RefObject } from 'react';

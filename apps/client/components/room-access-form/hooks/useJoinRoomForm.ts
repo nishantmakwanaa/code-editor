@@ -5,7 +5,6 @@
  * - Room ID validation
  * - Default values handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';

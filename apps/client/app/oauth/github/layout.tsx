@@ -4,7 +4,6 @@
  * - Metadata configuration for OAuth pages
  * - Suspense boundary for async components
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Suspense } from 'react';

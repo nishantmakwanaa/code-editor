@@ -5,7 +5,6 @@
  * - Route change handling
  * - Accessible label
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

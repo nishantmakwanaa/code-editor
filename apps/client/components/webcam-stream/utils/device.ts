@@ -6,7 +6,6 @@
  * - Permission management
  * - Device selection state
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Dispatch, SetStateAction } from 'react';

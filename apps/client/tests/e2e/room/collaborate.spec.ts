@@ -5,7 +5,6 @@
  * - Multi-user editing
  * - Content verification
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { expect, test } from '@playwright/test';

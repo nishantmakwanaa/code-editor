@@ -6,7 +6,6 @@
 # - Results reporting
 # - Deployment trigger
 #
-# By Dulapah Vibulsanti (https://dulapahv.dev)
 
 name: 🧪 Jest Tests
 permissions:

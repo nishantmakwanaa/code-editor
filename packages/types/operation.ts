@@ -4,8 +4,6 @@
  * - Edit operation type
  * - Cursor position type
  * - Range information
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 /**

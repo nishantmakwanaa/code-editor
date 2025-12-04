@@ -5,7 +5,6 @@
  * - Navigation after leaving
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useRouter } from 'next/navigation';

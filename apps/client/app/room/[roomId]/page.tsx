@@ -5,8 +5,6 @@
  * - Multi-cursor support
  * - Resizable panels for editor, terminal, preview
  * - Room-based collaboration
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

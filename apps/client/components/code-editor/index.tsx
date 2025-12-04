@@ -6,7 +6,6 @@
  * - Real-time sync
  * - Scroll synchronization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

@@ -1,7 +1,6 @@
 /**
  * This file configures the initialization of Sentry on the client.
  *
- * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
  * code by Sentry CLI.
  */
 

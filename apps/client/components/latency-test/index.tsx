@@ -6,7 +6,6 @@
  * - Statistical analysis
  * - Results visualization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

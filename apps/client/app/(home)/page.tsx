@@ -6,7 +6,6 @@
  * - About and latency test buttons
  * - Server status indicator
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Suspense } from 'react';
@@ -55,8 +54,8 @@ export default async function Page({ searchParams }: PageProps<'/'>) {
                   tracking-tight sm:text-5xl"
               >
                 <Image
-                  src="/images/codex-logo.svg"
-                  alt="CodeX Logo"
+                  src="/images/alpha-logo.svg"
+                  alt="Alpha Logo"
                   width={96}
                   height={96}
                   className="size-20 min-[1189px]:size-24"

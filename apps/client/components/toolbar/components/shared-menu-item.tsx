@@ -6,7 +6,6 @@
  * - Menu separators
  * - Keyboard shortcuts
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

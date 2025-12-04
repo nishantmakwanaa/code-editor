@@ -6,7 +6,6 @@
  * - Real-time setting updates
  * - Settings persistence
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

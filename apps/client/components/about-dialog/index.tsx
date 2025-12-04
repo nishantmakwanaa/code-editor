@@ -5,8 +5,6 @@
  * - Project description
  * - Preview image with loading state
  * - External links
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {
@@ -82,23 +80,22 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(
 
     if (isDesktop) {
       return (
-        <Dialog open={isOpen} onOpenChange={setIsOpen} aria-label="About CodeX">
+        <Dialog open={isOpen} onOpenChange={setIsOpen} aria-label="About Alpha">
           <DialogContent className={cn('max-w-2xl', forceDark && 'dark')}>
             <DialogHeader className="text-foreground text-left">
               <DialogTitle>{SITE_NAME}</DialogTitle>
               <DialogDescription className="pt-2 text-base">
-                This project is part of the course &quot;COMPSCI4025P Level 4
-                Individual Project&quot; at the University of Glasgow.
+                A real-time collaborative code editor.
               </DialogDescription>
             </DialogHeader>
 
             <div
               className="relative aspect-[600/315]"
-              aria-label="CodeX application preview"
+              aria-label="Alpha application preview"
             >
               <Image
                 src="/images/cover.png"
-                alt="CodeX application interface preview"
+                alt="Alpha application interface preview"
                 className="absolute rounded-md object-cover"
                 fill
                 sizes="1200px"
@@ -118,9 +115,6 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(
             <Separator />
 
             <div className="text-foreground space-y-2">
-              <p className="text-center">
-                Made with 💕 by <span className="font-medium">dulapahv</span>
-              </p>
               <nav
                 className="grid grid-cols-4 gap-2"
                 aria-label="External links"
@@ -142,21 +136,20 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(
     }
 
     return (
-      <Drawer open={isOpen} onOpenChange={setIsOpen} aria-label="About CodeX">
+      <Drawer open={isOpen} onOpenChange={setIsOpen} aria-label="About Alpha">
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle className="text-left">{SITE_NAME}</DrawerTitle>
             <DrawerDescription className="pt-2 text-left text-base">
-              This project is part of the course &quot;COMPSCI4025P Level 4
-              Individual Project&quot; at the University of Glasgow.
+              A real-time collaborative code editor.
             </DrawerDescription>
           </DrawerHeader>
 
-          <div className="w-full px-4" aria-label="CodeX application preview">
+          <div className="w-full px-4" aria-label="Alpha application preview">
             <div className="relative aspect-[600/315] w-full max-w-full">
               <Image
                 src="/images/cover.png"
-                alt="CodeX application interface preview"
+                alt="Alpha application interface preview"
                 className="rounded-md object-cover"
                 fill
                 sizes="(max-width: 768px) 100vw, 600px"
@@ -175,18 +168,15 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(
           </div>
 
           <div className="px-4">
+          <div className="px-4">
             <Separator className="my-4" aria-hidden="true" />
           </div>
 
           <div className="mx-4 space-y-2">
-            <p className="text-center">
-              Made with 💕 by <span className="font-medium">dulapahv</span>
-            </p>
             <nav className="grid grid-cols-2 gap-2" aria-label="External links">
               <ExternalLink forceDark={forceDark} />
             </nav>
           </div>
-
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="secondary" aria-label="Close drawer">

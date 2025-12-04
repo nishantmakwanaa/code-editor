@@ -2,7 +2,6 @@
  * Tests for measuring pointer tracking latency in collaborative editing.
  * Measures synchronization speed of pointer movements between users.
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import fs from 'fs';

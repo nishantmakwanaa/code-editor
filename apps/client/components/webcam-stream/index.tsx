@@ -6,7 +6,6 @@
  * - Device selection and toggling
  * - Permission handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';

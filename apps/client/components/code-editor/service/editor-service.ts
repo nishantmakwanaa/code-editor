@@ -6,7 +6,6 @@
  * - Event handling
  * - Socket integration
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Dispatch, RefObject, SetStateAction } from 'react';

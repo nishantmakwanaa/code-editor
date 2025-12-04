@@ -6,7 +6,6 @@
  * - Loading states
  * - Error display
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { CirclePlus } from 'lucide-react';

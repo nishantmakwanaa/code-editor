@@ -6,7 +6,6 @@
  * - Execution metadata
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { NextResponse } from 'next/server';

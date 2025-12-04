@@ -5,7 +5,6 @@
  * - Real-time updates
  * - Cleanup on unmount
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useEffect, useState } from 'react';

@@ -5,7 +5,6 @@
  * - Return to home button
  * - Responsive layout
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

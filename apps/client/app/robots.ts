@@ -5,7 +5,6 @@
  * - Disallowed paths
  * - Host URL
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { MetadataRoute } from 'next';

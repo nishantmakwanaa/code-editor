@@ -4,8 +4,6 @@
  * - Directory cleanup
  * - Interactive prompts
  * - Process cleanup
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 const fs = require('fs/promises');

@@ -3,8 +3,6 @@
  * Properties:
  * - User ID
  * - Username
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export interface User {

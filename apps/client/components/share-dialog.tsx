@@ -6,7 +6,6 @@
  * - Responsive dialog/drawer
  * - Copy success feedback
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {
@@ -179,7 +178,7 @@ const ShareDialog = forwardRef<ShareDialogRef, ShareDialogProps>(
             marginSize={2}
             className="rounded-lg"
             imageSettings={{
-              src: '/images/codex-logo.svg',
+              src: '/images/alpha-logo.svg',
               height: 48,
               width: 48,
               excavate: true,

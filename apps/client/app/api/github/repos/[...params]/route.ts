@@ -5,8 +5,6 @@
  * - File/directory contents
  * - Authentication validation
  * - Error handling
- *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { cookies } from 'next/headers';

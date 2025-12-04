@@ -6,7 +6,6 @@
  * - Tree data transformation
  * - State updating
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Dispatch, SetStateAction } from 'react';

@@ -5,7 +5,6 @@
  * - Icon imports
  * - Keyboard shortcut mapping
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

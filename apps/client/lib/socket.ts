@@ -5,7 +5,6 @@
  * - Server URL configuration
  * - Connection management
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { io, type Socket } from 'socket.io-client';

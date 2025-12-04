@@ -6,7 +6,6 @@
  * - Animated scaling
  * - Device-specific interaction
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { isMobile } from 'react-device-detect';

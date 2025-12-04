@@ -5,7 +5,6 @@
  * - File open confirmation
  * - Unsaved changes warning
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';

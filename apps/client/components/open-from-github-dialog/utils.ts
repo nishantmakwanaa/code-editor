@@ -5,7 +5,6 @@
  * - Tree data item type checking
  * - Path normalization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

@@ -5,7 +5,6 @@
  * - Query highlight
  * - Return to search button
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { RefObject } from 'react';

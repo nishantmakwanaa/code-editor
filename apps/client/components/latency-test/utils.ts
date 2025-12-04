@@ -5,7 +5,6 @@
  * - Median
  * - Standard deviation
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Stats } from './types';

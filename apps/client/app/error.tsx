@@ -5,7 +5,6 @@
  * - Recovery options
  * - Development error details
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

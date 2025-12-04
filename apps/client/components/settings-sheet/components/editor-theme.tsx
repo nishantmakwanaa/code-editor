@@ -5,7 +5,6 @@
  * - Theme preview with CSS variable updates
  * - Theme persistence
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useEffect, useState } from 'react';

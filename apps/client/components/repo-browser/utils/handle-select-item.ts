@@ -6,7 +6,6 @@
  * - Branch fetching
  * - Tree data recursion
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Dispatch, SetStateAction } from 'react';

@@ -6,7 +6,6 @@
  * - Markdown syntax support
  * - Image and table insertion
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

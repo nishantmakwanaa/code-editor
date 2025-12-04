@@ -6,7 +6,6 @@
  * - Submit handling
  * - Loading states
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { ArrowRight } from 'lucide-react';

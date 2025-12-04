@@ -5,7 +5,6 @@
  * - Timestamp formatting
  * - Message type coloring
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

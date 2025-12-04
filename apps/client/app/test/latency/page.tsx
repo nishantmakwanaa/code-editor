@@ -5,7 +5,6 @@
  * - Connection status display
  * - Results visualization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Metadata } from 'next';

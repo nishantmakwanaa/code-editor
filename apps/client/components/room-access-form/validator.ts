@@ -5,7 +5,6 @@
  * - Room ID format validation
  * - Type inference exports
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { z } from 'zod';

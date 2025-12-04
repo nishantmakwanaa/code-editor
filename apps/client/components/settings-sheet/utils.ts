@@ -5,7 +5,6 @@
  * - Title case formatting
  * - Settings file handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { ChangeEvent } from 'react';

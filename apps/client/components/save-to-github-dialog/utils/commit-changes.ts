@@ -6,7 +6,6 @@
  * - Commit data formatting
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { CommitResponse } from '@/components/repo-browser/types/github';

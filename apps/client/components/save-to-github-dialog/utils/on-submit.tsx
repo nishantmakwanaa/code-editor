@@ -5,7 +5,6 @@
  * - Toast notifications
  * - Success/error messaging
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { ExternalLink } from 'lucide-react';

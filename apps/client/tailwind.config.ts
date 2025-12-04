@@ -1,7 +1,6 @@
 /**
  * Tailwind CSS Configuration File
  *
- * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
  * code by Tailwind CSS CLI and shadcn/ui CLI.
  */
 

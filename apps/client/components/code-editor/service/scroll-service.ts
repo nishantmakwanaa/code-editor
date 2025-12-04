@@ -5,7 +5,6 @@
  * - Follow mode support
  * - User-specific scroll syncing
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { RefObject } from 'react';

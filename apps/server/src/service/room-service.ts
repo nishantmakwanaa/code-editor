@@ -6,7 +6,6 @@
  * - Room state management
  * - User data sync
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Server, Socket } from 'socket.io';

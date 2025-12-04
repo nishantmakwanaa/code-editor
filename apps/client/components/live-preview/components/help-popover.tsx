@@ -5,7 +5,6 @@
  * - Pre-installed libraries list
  * - External links
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { CircleHelp } from 'lucide-react';
@@ -77,15 +76,13 @@ const HelpPopover = () => (
                   tags
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/dulapahv/CodeX/blob/main/manual.md#live-preview-example"
+                                    <a
+                    href="https://github.com/yourusername/CodeX/blob/main/manual.md#live-preview-example"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-muted-foreground inline-flex items-center gap-1
-                      underline underline-offset-2 !transition-all"
+                    className="text-primary hover:underline"
                   >
-                    See live preview examples
-                    <span className="sr-only">(opens in new tab)</span>
+                    Learn more
                   </a>
                 </li>
               </ul>

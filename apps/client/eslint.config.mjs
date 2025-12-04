@@ -6,7 +6,6 @@
  * - Prettier integration
  * - Ignore patterns
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { dirname } from 'path';

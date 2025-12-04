@@ -5,7 +5,6 @@
  * - Feature descriptions
  * - Icon integration
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { ReactNode } from 'react';

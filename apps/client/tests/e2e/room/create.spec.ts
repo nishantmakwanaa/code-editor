@@ -5,7 +5,6 @@
  * - Empty name validation
  * - Form submission
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { expect, test } from '@playwright/test';

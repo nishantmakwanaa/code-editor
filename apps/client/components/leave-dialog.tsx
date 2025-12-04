@@ -5,7 +5,6 @@
  * - Room leaving confirmation
  * - Leave action handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { forwardRef, useCallback, useImperativeHandle, useState } from 'react';

@@ -5,7 +5,6 @@
  * - Menu command handlers
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { type Monaco } from '@monaco-editor/react';

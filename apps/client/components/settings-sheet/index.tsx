@@ -6,7 +6,6 @@
  * - GitHub connection
  * - Settings import/export
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {

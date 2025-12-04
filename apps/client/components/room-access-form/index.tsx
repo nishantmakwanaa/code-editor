@@ -6,7 +6,6 @@
  * - Form validation
  * - Redirection handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

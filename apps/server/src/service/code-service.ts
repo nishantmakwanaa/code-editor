@@ -6,7 +6,6 @@
  * - Language state sync
  * - Real-time broadcast
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Server, Socket } from 'socket.io';

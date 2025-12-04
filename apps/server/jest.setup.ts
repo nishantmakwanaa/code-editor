@@ -5,11 +5,10 @@
  * - Environment configuration
  * - Helper imports
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 const LOCAL_SERVER = 'http://localhost:3001';
-const REMOTE_SERVER = 'https://codex-server.dulapahv.dev';
+const REMOTE_SERVER = 'https://codex-server.example.com';
 
 const serverArg = process.argv.find((arg) => arg.startsWith('--server='));
 if (!serverArg) {

@@ -6,7 +6,6 @@
  * - Download/clear logs
  * - Welcome message
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';

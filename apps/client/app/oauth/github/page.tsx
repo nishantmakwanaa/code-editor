@@ -6,7 +6,6 @@
  * - Parent window messaging
  * - Automatic window handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';
