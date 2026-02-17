@@ -1,29 +1,14 @@
 # CodeX - Code Collaboration Platform
 
-<div align="center">
-  <a href="https://codex.dulapahv.dev/">
-    <img src="apps/client/public/images/cover.png" width="630" alt="codex cover image"/>
-  </a>
-</div>
-
-<br />
+**Owned by Nishant Makwana**
 
 <div align="center">
-  <a href="https://github.com/dulapahv/CodeX/actions/workflows/playwright.yml"><img src="https://github.com/dulapahv/CodeX/actions/workflows/playwright.yml/badge.svg"></a>
-  <a href="https://github.com/dulapahv/CodeX/actions/workflows/jest.yml"><img src="https://github.com/dulapahv/CodeX/actions/workflows/jest.yml/badge.svg"></a>
-</div>
-<div align="center">
-  <a href="https://github.com/dulapahv/CodeX/issues"><img src="https://img.shields.io/github/issues/dulapahv/CodeX.svg?style=flat" /></a>
-<!--   <a href="https://codeclimate.com/github/dulapahv/CodeX/maintainability"><img src="https://api.codeclimate.com/v1/badges/3984a19491b5e90cfa08/maintainability" /></a> -->
+  <img src="apps/client/public/images/cover.png" width="630" alt="codex cover image"/>
 </div>
 
 <br />
 
 **CodeX is an online code collaboration platform that enables real-time coding, cursor sharing, live UI preview, and video communication with integrated Git support—no sign-up required.**
-
-**✨ Try now at [codex.dulapahv.dev](https://codex.dulapahv.dev/)**
-
-> This project is part of the course "COMPSCI4025P Level 4 Individual Project" at the University of Glasgow.
 
 For detailed usage instructions and feature documentation, please see the **[User Manual](manual.md)**.
 
@@ -121,19 +106,9 @@ After checking the [prerequisites](#prerequisites) above, follow these steps to 
 
 3. **Environment setup**
 
-    Create `apps/client/.env` using the template from `apps/client/.env.example`:
+    Create `apps/client/.env` from `apps/client/.env.example` and set variables (see [Deployment](#deployment) for Vercel/Render).
 
-    ```bash
-    BETTERSTACK_API_KEY=
-    SENTRY_AUTH_TOKEN=
-    GITHUB_CLIENT_SECRET_PROD=
-    GITHUB_CLIENT_SECRET_DEV=
-    SENTRY_SUPPRESS_TURBOPACK_WARNING="1"
-    TURBO_TEAM=
-    TURBO_TOKEN=
-    ```
-
-    > Note: This is a personal project and the required API keys and secrets are not publicly shared. For local development, you'll need to set up your own credentials for GitHub OAuth, Sentry, etc.
+    > For local development, optional: GitHub OAuth, Sentry, Better Stack. For production (Vercel + Render), set the env vars listed in the deployment section.
 
 ## Development
 
@@ -213,10 +188,36 @@ The build artifacts of the frontend will be available in the `apps/client/.next`
 
 ## Deployment
 
-The project is configured for automatic deployment through Deploy Hooks which trigger after the GitHub Actions CI/CD pipeline completes successfully:
+**Owned by Nishant Makwana.** Deploy frontend to [Vercel](https://vercel.com) and backend to [Render](https://render.com).
 
-- Frontend (client): Automatically deploys to [Vercel](https://vercel.com)
-- Backend (server): Automatically deploys to [Render](https://render.com)
+### Where to set env
+
+| Where | File / place |
+|-------|----------------|
+| **Client (Next.js)** | `apps/client/.env` locally, or **Vercel** → Project → Settings → Environment Variables |
+| **Server (Node)** | **Render** → Web Service → Environment |
+
+### Env vars to set
+
+**Client (`apps/client/.env` or Vercel env):**
+
+| Variable | Required for prod | Description |
+|----------|-------------------|-------------|
+| `NEXT_PUBLIC_BASE_CLIENT_URL` | Yes (Vercel) | Your frontend URL, e.g. `https://your-app.vercel.app` |
+| `NEXT_PUBLIC_BASE_SERVER_URL` | Yes (Vercel) | Your backend URL, e.g. `https://your-server.onrender.com` |
+| `GITHUB_CLIENT_SECRET_DEV` | Optional | GitHub OAuth (dev) |
+| `GITHUB_CLIENT_SECRET_PROD` | Optional | GitHub OAuth (prod) |
+| `BETTERSTACK_API_KEY` | Optional | Status page / uptime |
+| `SENTRY_AUTH_TOKEN` | Optional | Sentry source map uploads |
+| `SENTRY_ORG` / `SENTRY_PROJECT` | Optional | Sentry project (defaults: nishant-makwana / code-editor) |
+
+**Server (Render env):**
+
+| Variable | Required for prod | Description |
+|----------|-------------------|-------------|
+| `ALLOWED_ORIGINS` | Yes (Render) | Comma-separated client URLs, e.g. `https://your-app.vercel.app` |
+
+Deploy client first, then set `NEXT_PUBLIC_BASE_CLIENT_URL` and `NEXT_PUBLIC_BASE_SERVER_URL` on Vercel, and `ALLOWED_ORIGINS` on Render to your Vercel URL.
 
 ## Scripts
 

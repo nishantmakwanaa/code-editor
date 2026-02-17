@@ -5,7 +5,7 @@
  * - Error handling
  * - Status response formatting
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * Owned by Nishant Makwana
  */
 
 import { NextResponse } from 'next/server';

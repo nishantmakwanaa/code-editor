@@ -48,7 +48,7 @@ const io = new Server({
 
       if (
         !origin ||
-        ALLOWED_ORIGINS.includes(origin as (typeof ALLOWED_ORIGINS)[number]) ||
+        ALLOWED_ORIGINS.includes(origin) ||
         isVercelDeployment(origin)
       ) {
         callback(null, true);

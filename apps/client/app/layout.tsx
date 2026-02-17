@@ -7,7 +7,7 @@
  * - Toast notifications
  * - Analytics
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * Owned by Nishant Makwana
  */
 
 import type { Metadata, Viewport } from 'next';
@@ -56,8 +56,7 @@ export const metadata: Metadata = {
     url: BASE_CLIENT_URL
   },
   twitter: {
-    card: 'summary_large_image',
-    creator: '@dulapahv'
+    card: 'summary_large_image'
   },
   alternates: {
     canonical: BASE_CLIENT_URL
