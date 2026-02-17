@@ -1,0 +1,9 @@
+# Render Blueprint - Backend (server) only
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: code-editor-server
+    runtime: node
+    plan: free
+    buildCommand: HUSKY=0 NODE_ENV=development pnpm install --frozen-lockfile && pnpm run build:server
+    startCommand: cd apps/server && node dist/index.js
