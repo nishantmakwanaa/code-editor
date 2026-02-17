@@ -5,5 +5,5 @@ services:
     name: code-editor-server
     runtime: node
     plan: free
-    buildCommand: HUSKY=0 NODE_ENV=development pnpm install --frozen-lockfile && pnpm run build:server
+    buildCommand: HUSKY=0 NODE_ENV=development pnpm install --frozen-lockfile && pnpm run build:server:render
     startCommand: cd apps/server && node dist/index.js

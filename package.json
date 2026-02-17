@@ -6,6 +6,7 @@
     "build": "turbo build",
     "build:client": "turbo build --filter=client...",
     "build:server": "turbo build --filter=server...",
+    "build:server:render": "pnpm --filter @codex/types build && pnpm --filter server build",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "format": "prettier --check **/*.{js,mjs,jsx,ts,tsx,json}",

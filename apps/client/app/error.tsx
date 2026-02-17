@@ -64,7 +64,7 @@ Stack: ${error.stack || 'No stack trace available'}`;
             </Link>
           </Button>
           <Button variant="default" asChild className="gap-2">
-            <Link href={BASE_CLIENT_URL}>
+            <Link href={BASE_CLIENT_URL as Route}>
               <Home className="size-4" />
               Return Home
             </Link>
