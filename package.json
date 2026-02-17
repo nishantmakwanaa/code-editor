@@ -6,7 +6,7 @@
     "build": "turbo build",
     "build:client": "turbo build --filter=client...",
     "build:server": "turbo build --filter=server...",
-    "build:server:render": "pnpm --filter @codex/types build && pnpm --filter server build",
+    "build:server:render": "pnpm --filter @codex/types build && pnpm --filter server build && node -e \"const fs=require('fs');const p='apps/server/dist/index.js';if(!fs.existsSync(p)){console.error('Missing '+p);process.exit(1);}console.log('OK',p);\"",
     "start:server": "node apps/server/dist/index.js",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
