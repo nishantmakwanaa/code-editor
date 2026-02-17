@@ -5,6 +5,7 @@
  * - Accessible tooltip
  * - Room ID handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useRef } from 'react';
@@ -13,11 +14,7 @@ import { Share } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { ShareDialog, ShareDialogRef } from '@/components/share-dialog';
 
 interface RoomProps {
@@ -55,11 +52,7 @@ const ShareButton = ({ roomId }: RoomProps) => {
           </TooltipContent>
         </Tooltip>
       </Dialog>
-      <ShareDialog
-        ref={shareDialogRef}
-        roomId={roomId}
-        aria-label="Share room options"
-      />
+      <ShareDialog ref={shareDialogRef} roomId={roomId} aria-label="Share room options" />
     </>
   );
 };

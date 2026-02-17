@@ -5,6 +5,7 @@
  * - Usage instructions
  * - Terminal formatting
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import Image from 'next/image';
@@ -15,8 +16,8 @@ const WelcomeMsg = () => (
   <div className="mb-4 space-y-2">
     <div className="flex items-center gap-2 text-green-500">
       <Image
-        src="/images/alpha-logo.svg"
-        alt="Alpha Logo"
+        src="/images/codex-logo.svg"
+        alt="CodeX Logo"
         className="size-5"
         width="16"
         height="16"

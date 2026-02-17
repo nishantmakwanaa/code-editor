@@ -4,20 +4,16 @@
  * - Link buttons with icons
  * - External URL handling
  * - Accessibility support
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import Image from 'next/image';
 
-import { Send, Linkedin } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import {
-  CONTACT_URL,
-  GITHUB_URL,
-  LINKEDIN_URL,
-  PORTFOLIO_URL,
-  REPO_URL,
-} from '@/lib/constants';
+import { CONTACT_URL, GITHUB_URL, PORTFOLIO_URL, REPO_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
 interface ExternalLinkProps {
@@ -37,13 +33,13 @@ const ExternalLink = ({ forceDark = false }: ExternalLinkProps) => {
           aria-label="Visit portfolio website (opens in new tab)"
         >
           <Image
-            src="/images/alpha-logo.svg"
-            alt="Alpha logo"
+            src="/images/codex-logo.svg"
+            alt="Mirai logo"
             className="mr-2"
             width={16}
             height={16}
           />
-          Website
+          My Portfolio
         </a>
       </Button>
       <Button variant="outline" size="sm" asChild>
@@ -65,17 +61,6 @@ const ExternalLink = ({ forceDark = false }: ExternalLinkProps) => {
       </Button>
       <Button variant="outline" size="sm" asChild>
         <a
-          href={LINKEDIN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit LinkedIn profile (opens in new tab)"
-        >
-          <Linkedin className="mr-2 h-4 w-4" />
-          LinkedIn
-        </a>
-      </Button>
-      <Button variant="outline" size="sm" asChild>
-        <a
           href={REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
@@ -88,7 +73,7 @@ const ExternalLink = ({ forceDark = false }: ExternalLinkProps) => {
             width={16}
             height={16}
           />
-          Alpha GitHub
+          CodeX GitHub
         </a>
       </Button>
       <Button variant="outline" size="sm" asChild>

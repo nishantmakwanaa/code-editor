@@ -6,6 +6,7 @@
  * - Real-time setting updates
  * - Settings persistence
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -24,14 +25,10 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 import { SELECT_OPTIONS } from '../constants';
 import type { EditorOption } from '../types';
@@ -78,11 +75,8 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
 
     // Get current editor options to fill in any missing settings
     // @ts-expect-error - Monaco editor internal API
-    const currentValues = (editor.getOptions() as EditorOptionsInternal)
-      ._values;
-    const optionKeys = Object.keys(monaco.editor.EditorOption).filter((key) =>
-      isNaN(Number(key)),
-    );
+    const currentValues = (editor.getOptions() as EditorOptionsInternal)._values;
+    const optionKeys = Object.keys(monaco.editor.EditorOption).filter(key => isNaN(Number(key)));
 
     // Merge stored settings with current editor values
     const mergedSettings = optionKeys.reduce(
@@ -107,7 +101,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
 
         return acc;
       },
-      { ...storedSettings },
+      { ...storedSettings }
     );
 
     setSettings(mergedSettings);
@@ -119,7 +113,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
     const values = (editor.getOptions() as EditorOptionsInternal)._values;
 
     Object.keys(monaco.editor.EditorOption)
-      .filter((key) => isNaN(Number(key)))
+      .filter(key => isNaN(Number(key)))
       .forEach((key, index) => {
         const value = values[index];
         if (value === undefined) return;
@@ -129,7 +123,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
           options[`${key}.enabled`] = {
             title: formatTitle(key),
             type: 'boolean',
-            currentValue: value.enabled,
+            currentValue: value.enabled
           };
           return;
         }
@@ -147,9 +141,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
               ? 'boolean'
               : type === 'number'
                 ? 'number'
-                : type === 'string' &&
-                    typeof value === 'string' &&
-                    ['on', 'off'].includes(value)
+                : type === 'string' && typeof value === 'string' && ['on', 'off'].includes(value)
                   ? 'select'
                   : SELECT_OPTIONS[key] // Use select for predefined options
                     ? 'select'
@@ -158,7 +150,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
           options:
             type !== 'boolean' && type !== 'number'
               ? SELECT_OPTIONS[key] || ['on', 'off']
-              : undefined,
+              : undefined
         };
       });
 
@@ -169,7 +161,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
     const searchLower = search.toLowerCase();
     return Object.entries(editorOptions).filter(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      ([_, option]) => option.title.toLowerCase().includes(searchLower),
+      ([_, option]) => option.title.toLowerCase().includes(searchLower)
     );
   }, [search, editorOptions]);
 
@@ -180,11 +172,11 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
         const mainKey = key.replace('.enabled', '');
         const newSettings = {
           ...settings,
-          [mainKey]: { enabled: value },
+          [mainKey]: { enabled: value }
         };
 
         editor.updateOptions({
-          [mainKey]: { enabled: value },
+          [mainKey]: { enabled: value }
         });
 
         setSettings(newSettings);
@@ -195,14 +187,14 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
       // For all other settings
       const newSettings = {
         ...settings,
-        [key]: value,
+        [key]: value
       };
 
       editor.updateOptions({ [key]: value });
       setSettings(newSettings);
       localStorage.setItem(EDITOR_SETTINGS_KEY, JSON.stringify(newSettings));
     },
-    [editor, settings],
+    [editor, settings]
   );
 
   const handleImportClick = useCallback(() => {
@@ -237,17 +229,14 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
       switch (option.type) {
         case 'boolean':
           return (
-            <div
-              className="flex items-center justify-between space-x-4 pb-3 pt-4"
-              key={key}
-            >
+            <div className="flex items-center justify-between space-x-4 pb-3 pt-4" key={key}>
               <Label htmlFor={id} className="text-sm font-medium">
                 {option.title}
               </Label>
               <Switch
                 id={id}
                 checked={!!value}
-                onCheckedChange={(checked) => updateSetting(key, checked)}
+                onCheckedChange={checked => updateSetting(key, checked)}
                 aria-label={option.title}
               />
             </div>
@@ -261,13 +250,13 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
               </Label>
               <Select
                 value={String(value || '')} // Ensure string value with fallback
-                onValueChange={(value) => updateSetting(key, value)}
+                onValueChange={value => updateSetting(key, value)}
               >
                 <SelectTrigger id={id} className="w-full">
                   <SelectValue placeholder={`Select ${option.title}`} />
                 </SelectTrigger>
                 <SelectContent>
-                  {option.options?.map((opt) => (
+                  {option.options?.map(opt => (
                     <SelectItem key={opt} value={opt}>
                       {opt}
                     </SelectItem>
@@ -287,7 +276,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
                 id={id}
                 type="number"
                 value={value ?? ''} // Provide fallback for undefined
-                onChange={(e) => updateSetting(key, Number(e.target.value))}
+                onChange={e => updateSetting(key, Number(e.target.value))}
                 className="max-w-[calc(100%-50%)]"
                 aria-label={option.title}
               />
@@ -304,22 +293,18 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
                 id={id}
                 type="text"
                 value={String(value ?? '')} // Convert to string and provide fallback
-                onChange={(e) => updateSetting(key, e.target.value)}
+                onChange={e => updateSetting(key, e.target.value)}
                 aria-label={option.title}
               />
             </div>
           );
       }
     },
-    [settings, updateSetting],
+    [settings, updateSetting]
   );
 
   return (
-    <div
-      className={cn('space-y-2', className)}
-      role="group"
-      aria-label="Editor Configuration"
-    >
+    <div className={cn('space-y-2', className)} role="group" aria-label="Editor Configuration">
       <div className="flex items-center gap-2">
         <div className="relative flex-1">
           <Search
@@ -330,7 +315,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
             type="search"
             placeholder="Search settings..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)}
             className="pl-8"
             aria-label="Search editor settings"
           />
@@ -365,7 +350,7 @@ export function EditorConfig({ monaco, editor, className }: EditorConfigProps) {
           ref={fileInputRef}
           type="file"
           accept=".json"
-          onChange={(e) => importSettings(editor, setSettings, e)}
+          onChange={e => importSettings(editor, setSettings, e)}
           className="hidden"
           aria-label="Import settings file"
         />

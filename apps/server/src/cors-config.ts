@@ -4,16 +4,19 @@
  * - Origin validation
  * - Vercel deployment detection
  * - Header generation
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 const ALLOWED_ORIGINS = [
+  'https://codex.dulapahv.dev',
   'https://codex.vercel.app',
-  'http://localhost:3000',
+  'https://dev-codex.dulapahv.dev',
+  'http://localhost:3000'
 ] as const;
 
 const isVercelDeployment = (origin: string): boolean => {
-  const VERCEL_PATTERN =
-    /^https:\/\/codex-client-[a-zA-Z0-9]+-[a-zA-Z0-9-]+\.vercel\.app$/;
+  const VERCEL_PATTERN = /^https:\/\/codex-client-[a-zA-Z0-9]+-[a-zA-Z0-9-]+\.vercel\.app$/;
   return VERCEL_PATTERN.test(origin);
 };
 
@@ -27,8 +30,7 @@ const getAllowedOrigin = (origin: string | undefined): string => {
 
   if (
     ALLOWED_ORIGINS.includes(origin as (typeof ALLOWED_ORIGINS)[number]) ||
-    isVercelDeployment(origin) ||
-    (process.env.CLIENT_URL && origin === process.env.CLIENT_URL)
+    isVercelDeployment(origin)
   ) {
     return origin;
   }
@@ -39,7 +41,7 @@ const getAllowedOrigin = (origin: string | undefined): string => {
 const getCorsHeaders = (origin: string | undefined) => ({
   'Access-Control-Allow-Origin': getAllowedOrigin(origin),
   'Access-Control-Allow-Methods': 'GET',
-  Vary: 'Origin',
+  Vary: 'Origin'
 });
 
 export { ALLOWED_ORIGINS, getCorsHeaders, isVercelDeployment };

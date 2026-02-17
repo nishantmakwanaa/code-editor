@@ -5,6 +5,7 @@
  * - Type constraints
  * - Value definitions
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export type EditorOption = {

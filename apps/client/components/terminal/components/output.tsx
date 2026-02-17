@@ -6,17 +6,14 @@
  * - Execution time display
  * - Error output handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { ExecutionResult } from '@codex/types/terminal';
 
 import { cn } from '@/lib/utils';
 
-import {
-  formatExecutionTime,
-  formatTimestamp,
-  getMessageColor,
-} from '../utils';
+import { formatExecutionTime, formatTimestamp, getMessageColor } from '../utils';
 
 interface OutputProps {
   result: ExecutionResult;
@@ -29,9 +26,7 @@ const Output = ({ result }: OutputProps) => {
   return (
     <div>
       <div className="flex">
-        <span className="text-muted-foreground mr-4">
-          [{formatTimestamp(timestamp)}]
-        </span>
+        <span className="text-muted-foreground mr-4">[{formatTimestamp(timestamp)}]</span>
         <div className="flex-1">
           {result.type === 'output' && (
             <div className="text-muted-foreground">
@@ -52,9 +47,7 @@ const Output = ({ result }: OutputProps) => {
           )}
 
           {result.run.code !== 0 && (
-            <div className="text-red-500">
-              Process exited with code {result.run.code}
-            </div>
+            <div className="text-red-500">Process exited with code {result.run.code}</div>
           )}
         </div>
       </div>

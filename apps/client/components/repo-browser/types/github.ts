@@ -6,6 +6,7 @@
  * - Content metadata
  * - Commit response
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { itemType } from './tree';

@@ -5,6 +5,7 @@
  * - Extended tree item interface
  * - Repository structure types
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { TreeDataItem } from '@/components/tree';
@@ -13,7 +14,7 @@ export enum itemType {
   REPO = 'repo',
   BRANCH = 'branch',
   DIR = 'dir',
-  FILE = 'file',
+  FILE = 'file'
 }
 
 // Extended interface for GitHub-specific functionality

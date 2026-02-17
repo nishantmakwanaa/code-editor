@@ -6,6 +6,7 @@
  * - Markdown syntax support
  * - Image and table insertion
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';
@@ -16,12 +17,11 @@ import dynamic from 'next/dynamic';
 import { EditorSkeleton } from './components/editor-skeleton';
 
 const DynamicNotepadMain = dynamic(
-  () =>
-    import('./components/notepad-main').then((mod) => mod.MarkdownEditorMain),
+  () => import('./components/notepad-main').then(mod => mod.MarkdownEditorMain),
   {
     ssr: false,
-    loading: () => <EditorSkeleton />,
-  },
+    loading: () => <EditorSkeleton />
+  }
 );
 
 const Notepad = ({ markdown }: { markdown: string }) => (

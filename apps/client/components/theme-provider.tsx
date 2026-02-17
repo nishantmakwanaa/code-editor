@@ -5,6 +5,7 @@
  * - Theme persistence
  * - Theme switching
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';

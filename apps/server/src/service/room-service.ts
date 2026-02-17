@@ -6,6 +6,7 @@
  * - Room state management
  * - User data sync
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Server, Socket } from 'socket.io';
@@ -63,7 +64,7 @@ export const join = async (
   socket: Socket,
   io: Server,
   roomID: string,
-  name: string,
+  name: string
 ): Promise<void> => {
   roomID = normalizeRoomId(roomID);
 
@@ -128,7 +129,7 @@ export const leave = async (socket: Socket, io: Server): Promise<void> => {
 export const getUsersInRoom = (
   socket: Socket,
   io: Server,
-  roomID: string = getUserRoom(socket),
+  roomID: string = getUserRoom(socket)
 ): Record<string, string> => {
   // Return empty object if no room
   if (!roomID) return {};
@@ -144,9 +145,7 @@ export const getUsersInRoom = (
     users = {};
     for (const socketId of room) {
       const username = userService.getUsername(socketId);
-      const customId = userService.getSocCustomId(
-        io.sockets.sockets.get(socketId),
-      );
+      const customId = userService.getSocCustomId(io.sockets.sockets.get(socketId));
       if (username && customId) {
         users[customId] = username;
       }

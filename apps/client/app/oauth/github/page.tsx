@@ -6,6 +6,7 @@
  * - Parent window messaging
  * - Automatic window handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';
@@ -27,9 +28,9 @@ export default function Page() {
       window.opener.postMessage(
         {
           type: 'github-oauth',
-          success: isSuccessful,
+          success: isSuccessful
         },
-        '*',
+        '*'
       );
     }
   }, [isSuccessful]);

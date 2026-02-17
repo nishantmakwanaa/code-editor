@@ -5,6 +5,7 @@
  * - Disabled state support
  * - Accessible button with label
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { ArrowLeft } from 'lucide-react';

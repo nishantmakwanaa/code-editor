@@ -5,6 +5,8 @@
  * - Code editing messages
  * - Scroll sync messages
  * - Video stream messages
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export enum RoomServiceMsg {
@@ -14,7 +16,7 @@ export enum RoomServiceMsg {
   NOT_FOUND = 'D',
   SYNC_USERS = 'E',
   SYNC_MD = 'F',
-  UPDATE_MD = 'G',
+  UPDATE_MD = 'G'
 }
 
 export enum CodeServiceMsg {
@@ -24,11 +26,11 @@ export enum CodeServiceMsg {
   SYNC_LANG = 'K',
   UPDATE_LANG = 'L',
   EXEC = 'M',
-  UPDATE_TERM = 'N',
+  UPDATE_TERM = 'N'
 }
 
 export enum ScrollServiceMsg {
-  UPDATE_SCROLL = 'O',
+  UPDATE_SCROLL = 'O'
 }
 
 export enum StreamServiceMsg {
@@ -39,9 +41,9 @@ export enum StreamServiceMsg {
   USER_DISCONNECTED = 'T',
   CAMERA_OFF = 'U',
   MIC_STATE = 'V',
-  SPEAKER_STATE = 'W',
+  SPEAKER_STATE = 'W'
 }
 
 export enum PointerServiceMsg {
-  POINTER = 'X',
+  POINTER = 'X'
 }

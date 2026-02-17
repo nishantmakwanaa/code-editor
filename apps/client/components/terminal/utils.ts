@@ -5,12 +5,10 @@
  * - Timestamp formatting
  * - Message type coloring
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
-import {
-  ExecutionResultType,
-  type ExecutionResult,
-} from '@codex/types/terminal';
+import { ExecutionResultType, type ExecutionResult } from '@codex/types/terminal';
 
 export const formatExecutionTime = (ms: number) => {
   if (ms < 1000) {
@@ -25,7 +23,7 @@ export const formatTimestamp = (date: Date) => {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    fractionalSecondDigits: 3,
+    fractionalSecondDigits: 3
   });
 };
 

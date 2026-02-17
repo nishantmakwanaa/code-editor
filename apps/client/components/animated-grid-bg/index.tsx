@@ -6,6 +6,7 @@
  * - Mouse-based parallax
  * - Dynamic sizing
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';
@@ -18,7 +19,7 @@ import {
   MotionValue,
   useMotionValue,
   useSpring,
-  useTransform,
+  useTransform
 } from 'motion/react';
 
 import { useMediaQuery } from '@/hooks/use-media-query';
@@ -31,7 +32,7 @@ const AnimatedGridBackground = () => {
   const [gridConfig, setGridConfig] = useState<GridConfig>({
     rows: isDesktop ? 20 : 10,
     cols: isDesktop ? 24 : 8,
-    cellSize: isDesktop ? 50 : 40,
+    cellSize: isDesktop ? 50 : 40
   });
 
   const [lights, setLights] = useState<Light[]>([]);
@@ -62,7 +63,7 @@ const AnimatedGridBackground = () => {
       mouseX.set(x);
       mouseY.set(y);
     },
-    [mouseX, mouseY],
+    [mouseX, mouseY]
   );
 
   // Generate a random light
@@ -75,14 +76,14 @@ const AnimatedGridBackground = () => {
         type: 'horizontal',
         position: Math.floor(Math.random() * gridConfig.rows),
         key: Date.now() + Math.random(),
-        duration,
+        duration
       };
     } else {
       return {
         type: 'vertical',
         position: Math.floor(Math.random() * gridConfig.cols),
         key: Date.now() + Math.random(),
-        duration,
+        duration
       };
     }
   }, [gridConfig.rows, gridConfig.cols, isDesktop]);
@@ -90,11 +91,9 @@ const AnimatedGridBackground = () => {
   // Spawn new lights periodically
   useEffect(() => {
     const spawnLight = () => {
-      setLights((prevLights) => {
+      setLights(prevLights => {
         const now = Date.now();
-        const filteredLights = prevLights.filter(
-          (light) => now - light.key < 8000,
-        );
+        const filteredLights = prevLights.filter(light => now - light.key < 8000);
 
         const maxLights = isDesktop ? 10 : 8;
         if (filteredLights.length < maxLights) {
@@ -124,7 +123,7 @@ const AnimatedGridBackground = () => {
       setGridConfig({
         rows: newRows,
         cols: newCols,
-        cellSize: newCellSize,
+        cellSize: newCellSize
       });
     };
 
@@ -144,9 +143,9 @@ const AnimatedGridBackground = () => {
     visible: {
       opacity: 0.1,
       transition: {
-        duration: 1,
-      },
-    },
+        duration: 1
+      }
+    }
   };
 
   // Calculate dimensions for light elements
@@ -159,8 +158,7 @@ const AnimatedGridBackground = () => {
     horizontal: {
       trail: {
         width: trailWidth,
-        background:
-          'linear-gradient(90deg, transparent 0%, rgba(103, 172, 245, 0.4) 100%)',
+        background: 'linear-gradient(90deg, transparent 0%, rgba(103, 172, 245, 0.4) 100%)'
       },
       glow: {
         position: 'absolute',
@@ -172,14 +170,13 @@ const AnimatedGridBackground = () => {
           0 0 8px 1px rgba(103, 172, 245, 0.6),
           0 0 16px 2px rgba(103, 172, 245, 0.4),
           0 0 24px 3px rgba(103, 172, 245, 0.2)
-        `,
-      },
+        `
+      }
     },
     vertical: {
       trail: {
         height: trailHeight,
-        background:
-          'linear-gradient(180deg, transparent 0%, rgba(103, 172, 245, 0.4) 100%)',
+        background: 'linear-gradient(180deg, transparent 0%, rgba(103, 172, 245, 0.4) 100%)'
       },
       glow: {
         position: 'absolute',
@@ -191,23 +188,19 @@ const AnimatedGridBackground = () => {
           0 0 8px 1px rgba(103, 172, 245, 0.6),
           0 0 16px 2px rgba(103, 172, 245, 0.4),
           0 0 24px 3px rgba(103, 172, 245, 0.2)
-        `,
-      },
-    },
+        `
+      }
+    }
   };
 
   return (
-    <div
-      className="fixed inset-0 -z-10 overflow-hidden"
-      aria-hidden="true"
-      role="presentation"
-    >
+    <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true" role="presentation">
       <motion.div
         className="absolute"
         style={{
           inset: -40,
           x: gridX,
-          y: gridY,
+          y: gridY
         }}
       >
         {/* Grid lines */}
@@ -217,7 +210,7 @@ const AnimatedGridBackground = () => {
             className="absolute top-0 h-full w-px bg-white/80 dark:bg-gray-300/40"
             style={{
               left: `${(i * 100) / gridConfig.cols}%`,
-              transform: 'translateX(-50%)',
+              transform: 'translateX(-50%)'
             }}
             initial="hidden"
             animate="visible"
@@ -231,7 +224,7 @@ const AnimatedGridBackground = () => {
             className="absolute left-0 h-px w-full bg-white/80 dark:bg-gray-300/40"
             style={{
               top: `${(i * 100) / gridConfig.rows}%`,
-              transform: 'translateY(-50%)',
+              transform: 'translateY(-50%)'
             }}
             initial="hidden"
             animate="visible"
@@ -241,7 +234,7 @@ const AnimatedGridBackground = () => {
 
         {/* Lights with parallax effect */}
         <AnimatePresence>
-          {lights.map((light) => {
+          {lights.map(light => {
             if (light.type === 'horizontal') {
               return (
                 <motion.div
@@ -249,7 +242,7 @@ const AnimatedGridBackground = () => {
                   className="absolute h-px w-full"
                   style={{
                     top: `${(light.position * 100) / gridConfig.rows}%`,
-                    transform: 'translateY(-50%)',
+                    transform: 'translateY(-50%)'
                   }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -260,14 +253,14 @@ const AnimatedGridBackground = () => {
                     className="absolute h-full rounded-full"
                     style={{
                       ...lightStyles.horizontal.trail,
-                      position: 'relative',
+                      position: 'relative'
                     }}
                     animate={{
-                      left: ['-20%', '120%'],
+                      left: ['-20%', '120%']
                     }}
                     transition={{
                       duration: light.duration,
-                      ease: 'linear',
+                      ease: 'linear'
                     }}
                   >
                     <div style={lightStyles.horizontal.glow} />
@@ -281,7 +274,7 @@ const AnimatedGridBackground = () => {
                   className="absolute h-full w-px"
                   style={{
                     left: `${(light.position * 100) / gridConfig.cols}%`,
-                    transform: 'translateX(-50%)',
+                    transform: 'translateX(-50%)'
                   }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -292,14 +285,14 @@ const AnimatedGridBackground = () => {
                     className="absolute w-full"
                     style={{
                       ...lightStyles.vertical.trail,
-                      position: 'relative',
+                      position: 'relative'
                     }}
                     animate={{
-                      top: ['-20%', '120%'],
+                      top: ['-20%', '120%']
                     }}
                     transition={{
                       duration: light.duration,
-                      ease: 'linear',
+                      ease: 'linear'
                     }}
                   >
                     <div style={lightStyles.vertical.glow} />

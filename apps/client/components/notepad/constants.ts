@@ -2,6 +2,7 @@
  * Map of supported code block languages for CodeMirror editor.
  * Source: https://codemirror.net/5/mode/
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export const codeBlockLanguages: Record<string, string> = {
@@ -136,5 +137,5 @@ export const codeBlockLanguages: Record<string, string> = {
   xquery: 'XQuery',
   yacas: 'Yacas',
   yaml: 'YAML',
-  z80: 'Z80',
+  z80: 'Z80'
 };

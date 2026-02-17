@@ -5,6 +5,7 @@
  * - User identification
  * - Socket messaging
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Socket } from 'socket.io';

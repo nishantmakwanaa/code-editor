@@ -5,6 +5,8 @@
  * - API endpoint URLs
  * - OAuth credentials
  * - App metadata
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export const IS_DEV_ENV =
@@ -12,44 +14,36 @@ export const IS_DEV_ENV =
   process.env.NEXT_PUBLIC_ENV === 'development' ||
   process.env.NODE_ENV === 'development';
 
-export const BASE_CLIENT_URL = IS_DEV_ENV
-  ? 'http://localhost:3000'
-  : 'https://alpha.example.com';
-export const BASE_SERVER_URL =
-  process.env.NEXT_PUBLIC_SERVER_URL ||
-  (IS_DEV_ENV ? 'http://localhost:3001' : 'https://alpha-server.example.com');
+export const BASE_CLIENT_URL = IS_DEV_ENV ? 'http://localhost:3000' : 'https://codex.dulapahv.dev';
+export const BASE_SERVER_URL = IS_DEV_ENV
+  ? 'http://localhost:3001'
+  : 'https://codex-server.dulapahv.dev';
 
-export const STATUS_URL = 'https://alpha-status.example.com';
+export const STATUS_URL = 'https://codex-status.dulapahv.dev';
 export const KASCA_SERVER_MONITOR_ID = '2887417';
 
 export const GITHUB_API_URL = 'https://api.github.com';
 export const GITHUB_OAUTH_URL = 'https://github.com/login/oauth';
-export const GITHUB_CLIENT_ID = IS_DEV_ENV
-  ? 'Ov23liuy4d9jGnpy9t6j'
-  : 'Ov23liIuxEK1vcaIKIxP';
+export const GITHUB_CLIENT_ID = IS_DEV_ENV ? 'Ov23liuy4d9jGnpy9t6j' : 'Ov23liIuxEK1vcaIKIxP';
 export const GITHUB_CLIENT_SECRET = IS_DEV_ENV
   ? process.env.GITHUB_CLIENT_SECRET_DEV
   : process.env.GITHUB_CLIENT_SECRET_PROD;
 
 export const NAME_MAX_LENGTH = 64;
 
-export const SITE_NAME = 'Alpha - Code Collaboration Platform';
+export const SITE_NAME = 'CodeX - Code Collaboration Platform';
 export const SITE_DESCRIPTION =
-  'Your collaborative coding space, reimagined. Code together now on Alpha, no sign-up required.';
-export const INVITED_DESCRIPTION =
-  'You have been invited to a coding session. Happy coding!';
+  'Your collaborative coding space, reimagined. Code together now on CodeX, no sign-up required.';
+export const INVITED_DESCRIPTION = 'You have been invited to a coding session. Happy coding!';
 export const LATENCY_TEST_TITLE = 'Server Latency Test';
-export const LATENCY_TEST_DESCRIPTION =
-  'Test your latency to the Alpha server.';
+export const LATENCY_TEST_DESCRIPTION = 'Test your latency to the CodeX server.';
 export const GITHUB_OAUTH_TITLE = 'GitHub OAuth Callback';
-export const GITHUB_OAUTH_DESCRIPTION =
-  'This page is used to handle the GitHub OAuth callback.';
-export const NAME = 'Alpha';
-export const PORTFOLIO_URL = 'https://nishantmakwanaa.vercel.app';
-export const CONTACT_URL = 'https://nishantmakwanaa.vercel.app';
-export const REPO_URL = 'https://github.com/nishantmakwaana/alpha';
-export const GITHUB_URL = 'https://github.com/nishantmakwaana';
-export const LINKEDIN_URL = 'https://linkedin.com/in/nishantmakwanaa';
+export const GITHUB_OAUTH_DESCRIPTION = 'This page is used to handle the GitHub OAuth callback.';
+export const NAME = 'Dulapah Vibulsanti';
+export const PORTFOLIO_URL = 'https://dulapahv.dev';
+export const CONTACT_URL = 'https://dulapahv.dev/contact';
+export const REPO_URL = 'https://github.com/dulapahv/codex';
+export const GITHUB_URL = 'https://github.com/dulapahv';
 
 export const EDITOR_SETTINGS_KEY = 'editor-settings';
 
@@ -94,5 +88,5 @@ export const PRE_INSTALLED_LIBS = [
   { name: 'Chart.js', version: '4.x' },
   { name: 'Lodash', version: '4.x' },
   { name: 'Day.js', version: '1.x' },
-  { name: 'Sortable.js', version: '1.x' },
+  { name: 'Sortable.js', version: '1.x' }
 ];

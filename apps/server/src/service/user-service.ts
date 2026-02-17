@@ -5,6 +5,7 @@
  * - Socket/user mapping
  * - Data persistence
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Socket } from 'socket.io';
@@ -91,9 +92,7 @@ export const updateCursor = (socket: Socket, cursor: Cursor): void => {
   const userData = socketToUserData.get(socket.id);
 
   if (userData) {
-    socket
-      .to(roomId)
-      .emit(CodeServiceMsg.UPDATE_CURSOR, userData.customId, cursor);
+    socket.to(roomId).emit(CodeServiceMsg.UPDATE_CURSOR, userData.customId, cursor);
   }
 };
 

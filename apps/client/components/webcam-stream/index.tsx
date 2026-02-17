@@ -6,19 +6,12 @@
  * - Device selection and toggling
  * - Permission handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import {
-  Mic,
-  MicOff,
-  RefreshCw,
-  Video,
-  VideoOff,
-  Volume2,
-  VolumeOff,
-} from 'lucide-react';
+import { Mic, MicOff, RefreshCw, Video, VideoOff, Volume2, VolumeOff } from 'lucide-react';
 import { isMobile } from 'react-device-detect';
 import type Peer from 'simple-peer';
 import { toast } from 'sonner';
@@ -32,20 +25,13 @@ import { getSocket } from '@/lib/socket';
 import { parseError } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Avatar } from '@/components/avatar';
-import {
-  switchAudioDevice,
-  switchVideoDevice,
-} from '@/components/webcam-stream/utils/media';
+import { switchAudioDevice, switchVideoDevice } from '@/components/webcam-stream/utils/media';
 
 import { DeviceControls } from './components/device-controls';
 import { VideoControls } from './components/video-controls';
 import type { MediaDevice } from './types';
 import { rotateCamera, toggleCamera, toggleMic } from './utils/controls';
-import {
-  enumerateDevices,
-  handleDevicePermissionGranted,
-  initDevices,
-} from './utils/device';
+import { enumerateDevices, handleDevicePermissionGranted, initDevices } from './utils/device';
 import { getMedia } from './utils/media';
 import { cleanupPeer, createPeer, handleSignal } from './utils/peer';
 
@@ -58,27 +44,17 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
   const [micOn, setMicOn] = useState(false);
   const [speakerOn, setSpeakerOn] = useState(true);
   const [hasRequestedPermissions, setHasRequestedPermissions] = useState(false);
-  const [remoteStreams, setRemoteStreams] = useState<
-    Record<string, MediaStream | null>
-  >({});
-  const [remoteMicStates, setRemoteMicStates] = useState<
-    Record<string, boolean>
-  >({});
-  const [remoteSpeakerStates, setRemoteSpeakerStates] = useState<
-    Record<string, boolean>
-  >({});
+  const [remoteStreams, setRemoteStreams] = useState<Record<string, MediaStream | null>>({});
+  const [remoteMicStates, setRemoteMicStates] = useState<Record<string, boolean>>({});
+  const [remoteSpeakerStates, setRemoteSpeakerStates] = useState<Record<string, boolean>>({});
 
   const [videoDevices, setVideoDevices] = useState<MediaDevice[]>([]);
   const [audioInputDevices, setAudioInputDevices] = useState<MediaDevice[]>([]);
-  const [audioOutputDevices, setAudioOutputDevices] = useState<MediaDevice[]>(
-    [],
-  );
+  const [audioOutputDevices, setAudioOutputDevices] = useState<MediaDevice[]>([]);
   const [selectedVideoDevice, setSelectedVideoDevice] = useState<string>('');
   const [selectedAudioInput, setSelectedAudioInput] = useState<string>('');
   const [selectedAudioOutput, setSelectedAudioOutput] = useState<string>('');
-  const [cameraFacingMode, setCameraFacingMode] = useState<
-    'user' | 'environment'
-  >('user');
+  const [cameraFacingMode, setCameraFacingMode] = useState<'user' | 'environment'>('user');
 
   const socket = getSocket();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -97,15 +73,9 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
       videoRef,
       peersRef,
       setRemoteStreams,
-      pendingSignalsRef,
+      pendingSignalsRef
     );
-  }, [
-    selectedVideoDevice,
-    selectedAudioInput,
-    selectedAudioOutput,
-    cameraFacingMode,
-    micOn,
-  ]);
+  }, [selectedVideoDevice, selectedAudioInput, selectedAudioOutput, cameraFacingMode, micOn]);
 
   // Handle video device selection
   const handleVideoDeviceSelect = async (deviceId: string) => {
@@ -120,7 +90,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
         micOn,
         selectedAudioInput,
         selectedAudioOutput,
-        cameraFacingMode,
+        cameraFacingMode
       );
 
       if (success) {
@@ -144,7 +114,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
         micOn,
         selectedVideoDevice,
         selectedAudioOutput,
-        cameraFacingMode,
+        cameraFacingMode
       );
 
       if (success) {
@@ -180,16 +150,13 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
         selectedAudioInput,
         setSelectedAudioInput,
         selectedAudioOutput,
-        setSelectedAudioOutput,
+        setSelectedAudioOutput
       );
     };
 
     initDevices(handleDeviceChange);
     return () => {
-      navigator.mediaDevices.removeEventListener(
-        'devicechange',
-        handleDeviceChange,
-      );
+      navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
     };
   }, [selectedVideoDevice, selectedAudioInput, selectedAudioOutput]);
 
@@ -200,14 +167,14 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
 
       try {
         const devices = await navigator.mediaDevices.enumerateDevices();
-        const hasLabels = devices.some((device) => device.label !== '');
+        const hasLabels = devices.some(device => device.label !== '');
 
         if (!hasLabels) {
           const stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'user' },
-            audio: true,
+            audio: true
           });
-          stream.getTracks().forEach((track) => track.stop());
+          stream.getTracks().forEach(track => track.stop());
         }
 
         await enumerateDevices(
@@ -219,7 +186,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
           selectedAudioInput,
           setSelectedAudioInput,
           selectedAudioOutput,
-          setSelectedAudioOutput,
+          setSelectedAudioOutput
         );
 
         setHasRequestedPermissions(true);
@@ -229,12 +196,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
     };
 
     requestInitialPermissions();
-  }, [
-    hasRequestedPermissions,
-    selectedAudioInput,
-    selectedAudioOutput,
-    selectedVideoDevice,
-  ]);
+  }, [hasRequestedPermissions, selectedAudioInput, selectedAudioOutput, selectedVideoDevice]);
 
   // Initialize device enumeration
   useEffect(() => {
@@ -248,16 +210,13 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
         selectedAudioInput,
         setSelectedAudioInput,
         selectedAudioOutput,
-        setSelectedAudioOutput,
+        setSelectedAudioOutput
       );
     };
 
     initDevices(handleDeviceChange);
     return () => {
-      navigator.mediaDevices.removeEventListener(
-        'devicechange',
-        handleDeviceChange,
-      );
+      navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
     };
   }, [selectedVideoDevice, selectedAudioInput, selectedAudioOutput]);
 
@@ -267,7 +226,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
 
     // Find all video elements in the component and update their muted state
     const videoElements = document.querySelectorAll('video');
-    videoElements.forEach((video) => {
+    videoElements.forEach(video => {
       if (video !== videoRef.current) {
         // Don't mute local video
         video.muted = !newState;
@@ -284,14 +243,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
 
     socket.on(StreamServiceMsg.USER_READY, (userID: string) => {
       if (hasRequestedPermissions) {
-        createPeer(
-          userID,
-          true,
-          streamRef,
-          peersRef,
-          setRemoteStreams,
-          pendingSignalsRef,
-        );
+        createPeer(userID, true, streamRef, peersRef, setRemoteStreams, pendingSignalsRef);
         socket.emit(StreamServiceMsg.SPEAKER_STATE, speakerOn);
       }
     });
@@ -299,36 +251,29 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
     socket.on(
       StreamServiceMsg.MIC_STATE,
       ({ userID, micOn }: { userID: string; micOn: boolean }) => {
-        setRemoteMicStates((prev) => ({ ...prev, [userID]: micOn }));
-      },
+        setRemoteMicStates(prev => ({ ...prev, [userID]: micOn }));
+      }
     );
 
     socket.on(
       StreamServiceMsg.SPEAKER_STATE,
       ({ userID, speakersOn }: { userID: string; speakersOn: boolean }) => {
-        setRemoteSpeakerStates((prev) => ({ ...prev, [userID]: speakersOn }));
-      },
+        setRemoteSpeakerStates(prev => ({ ...prev, [userID]: speakersOn }));
+      }
     );
 
     socket.on(
       StreamServiceMsg.SIGNAL,
       ({ userID, signal }: { userID: string; signal: unknown }) => {
         if (hasRequestedPermissions) {
-          handleSignal(
-            signal,
-            userID,
-            streamRef,
-            peersRef,
-            setRemoteStreams,
-            pendingSignalsRef,
-          );
+          handleSignal(signal, userID, streamRef, peersRef, setRemoteStreams, pendingSignalsRef);
         }
-      },
+      }
     );
 
     socket.on(StreamServiceMsg.CAMERA_OFF, (userID: string) => {
       if (userID !== storage.getUserId()) {
-        setRemoteStreams((prev) => {
+        setRemoteStreams(prev => {
           const newStreams = { ...prev };
           delete newStreams[userID];
           return newStreams;
@@ -352,10 +297,10 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
     return () => {
       if (streamRef.current) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        streamRef.current.getTracks().forEach((track) => track.stop());
+        streamRef.current.getTracks().forEach(track => track.stop());
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      Object.keys(peersRef.current).forEach((userID) => {
+      Object.keys(peersRef.current).forEach(userID => {
         cleanupPeer(userID, peersRef, setRemoteStreams);
       });
       socket.emit(StreamServiceMsg.CAMERA_OFF);
@@ -368,8 +313,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
       <div
         className="grid auto-rows-[1fr] gap-2 overflow-y-auto"
         style={{
-          gridTemplateColumns:
-            'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))'
         }}
       >
         {/* Local video */}
@@ -387,7 +331,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
                 <Avatar
                   user={{
                     id: storage.getUserId() ?? '',
-                    username: userMap.get(storage.getUserId() ?? '') ?? '',
+                    username: userMap.get(storage.getUserId() ?? '') ?? ''
                   }}
                   size="lg"
                   showTooltip={false}
@@ -403,8 +347,8 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
               remoteSpeakerStates={remoteSpeakerStates}
             />
             <div
-              className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded bg-black/50
-                px-2 py-1 text-sm text-white"
+              className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded bg-black/50 px-2 py-1 text-sm
+                text-white"
             >
               {userMap.get(storage.getUserId() ?? '')} (you)
             </div>
@@ -413,8 +357,8 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
 
         {/* Remote videos */}
         {users
-          .filter((user) => user.id !== storage.getUserId())
-          .map((user) => (
+          .filter(user => user.id !== storage.getUserId())
+          .map(user => (
             <div key={user.id} className="relative">
               <div className="relative aspect-video rounded-lg bg-black/10 dark:bg-black/30">
                 {remoteStreams[user.id] ? (
@@ -423,7 +367,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
                     playsInline
                     muted={!speakerOn}
                     className="size-full scale-x-[-1] rounded-lg object-cover"
-                    ref={(element) => {
+                    ref={element => {
                       if (element) element.srcObject = remoteStreams[user.id];
                     }}
                   />
@@ -441,8 +385,8 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
                   remoteSpeakerStates={remoteSpeakerStates}
                 />
                 <div
-                  className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded bg-black/50
-                    px-2 py-1 text-sm text-white"
+                  className="absolute bottom-2 left-2 max-w-[calc(100%-1rem)] truncate rounded bg-black/50 px-2 py-1 text-sm
+                    text-white"
                 >
                   {user.username}
                 </div>
@@ -467,16 +411,16 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
                 setMicOn,
                 streamRef,
                 videoRef,
-                handleGetMedia,
+                handleGetMedia
               )
             }
             isEnabled={cameraOn}
-            onDevicePermissionGranted={async (kind) => {
+            onDevicePermissionGranted={async kind => {
               await handleDevicePermissionGranted(
                 kind,
                 setVideoDevices,
                 setAudioInputDevices,
-                setAudioOutputDevices,
+                setAudioOutputDevices
               );
             }}
           />
@@ -489,7 +433,7 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
                   cameraFacingMode,
                   setCameraFacingMode,
                   streamRef,
-                  handleGetMedia,
+                  handleGetMedia
                 )
               }
               variant="ghost"
@@ -511,12 +455,12 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
           onToggle={() => toggleMic(micOn, setMicOn, streamRef)}
           isEnabled={micOn}
           disableToggle={!cameraOn}
-          onDevicePermissionGranted={async (kind) => {
+          onDevicePermissionGranted={async kind => {
             await handleDevicePermissionGranted(
               kind,
               setVideoDevices,
               setAudioInputDevices,
-              setAudioOutputDevices,
+              setAudioOutputDevices
             );
           }}
         />
@@ -529,12 +473,12 @@ const WebcamStream = ({ users }: WebcamStreamProps) => {
           onDeviceSelect={handleAudioOutputSelect}
           onToggle={() => toggleSpeaker(!speakerOn)}
           isEnabled={speakerOn}
-          onDevicePermissionGranted={async (kind) => {
+          onDevicePermissionGranted={async kind => {
             await handleDevicePermissionGranted(
               kind,
               setVideoDevices,
               setAudioInputDevices,
-              setAudioOutputDevices,
+              setAudioOutputDevices
             );
           }}
         />

@@ -6,15 +6,10 @@
  * - Args/stdin input handling
  * - Status indication
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  type Dispatch,
-  type SetStateAction,
-} from 'react';
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 
 import { Monaco } from '@monaco-editor/react';
 import { OctagonX, Play } from 'lucide-react';
@@ -38,12 +33,7 @@ interface RunButtonProps {
   className?: string;
 }
 
-const RunButton = ({
-  monaco,
-  editor,
-  setOutput,
-  className,
-}: RunButtonProps) => {
+const RunButton = ({ monaco, editor, setOutput, className }: RunButtonProps) => {
   const socket = getSocket();
   const abortControllerRef = useRef<AbortController | null>(null);
   const [isRunning, setIsRunning] = useState(false);
@@ -51,9 +41,7 @@ const RunButton = ({
   const [stdin, setStdin] = useState('');
 
   useEffect(() => {
-    socket.on(CodeServiceMsg.EXEC, (isExecuting: boolean) =>
-      setIsRunning(isExecuting),
-    );
+    socket.on(CodeServiceMsg.EXEC, (isExecuting: boolean) => setIsRunning(isExecuting));
 
     return () => {
       socket.off(CodeServiceMsg.EXEC);
@@ -66,8 +54,7 @@ const RunButton = ({
         <Button
           onClick={
             isRunning
-              ? () =>
-                  cancelExecution(abortControllerRef, setIsRunning, setOutput)
+              ? () => cancelExecution(abortControllerRef, setIsRunning, setOutput)
               : () =>
                   executeCode(
                     monaco,
@@ -76,15 +63,14 @@ const RunButton = ({
                     setIsRunning,
                     abortControllerRef,
                     args,
-                    stdin,
+                    stdin
                   )
           }
           className={cn(
-            `h-7 rounded-r-none bg-[color:var(--toolbar-accent)] px-2 py-0
-            text-[color:var(--panel-text-accent)] transition-opacity
-            hover:bg-[color:var(--toolbar-accent)] hover:!opacity-80 disabled:!opacity-50`,
+            `h-7 rounded-r-none bg-[color:var(--toolbar-accent)] px-2 py-0 text-[color:var(--panel-text-accent)]
+            transition-opacity hover:bg-[color:var(--toolbar-accent)] hover:!opacity-80 disabled:!opacity-50`,
             isRunning && 'bg-red-600 hover:bg-red-700',
-            className,
+            className
           )}
           disabled={!editor}
           aria-busy={isRunning}
@@ -97,10 +83,7 @@ const RunButton = ({
             </>
           ) : (
             <>
-              <Play
-                className="mr-0 size-4 fill-green-600 sm:mr-1"
-                aria-hidden="true"
-              />
+              <Play className="mr-0 size-4 fill-green-600 sm:mr-1" aria-hidden="true" />
               <span className="hidden sm:flex">Run Code</span>
             </>
           )}

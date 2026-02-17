@@ -5,6 +5,7 @@
  * - Server URL configuration
  * - Connection management
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { io, type Socket } from 'socket.io-client';
@@ -22,7 +23,7 @@ export const getSocket = (): Socket => {
     socketInstance = io(BASE_SERVER_URL, {
       transports: ['websocket', 'polling'],
       autoConnect: false,
-      timestampRequests: false,
+      timestampRequests: false
     });
   }
 

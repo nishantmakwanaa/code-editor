@@ -5,6 +5,7 @@
  * - Animated content placeholders
  * - Responsive layout matching editor
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Skeleton } from '@/components/ui/skeleton';

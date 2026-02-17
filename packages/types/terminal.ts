@@ -4,6 +4,8 @@
  * - Execution result interface
  * - Result type enumeration
  * - Output metadata
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 export interface ExecutionResult {
@@ -25,5 +27,5 @@ export enum ExecutionResultType {
   INFO = 'info',
   WARNING = 'warning',
   ERROR = 'error',
-  OUTPUT = 'output',
+  OUTPUT = 'output'
 }

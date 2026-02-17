@@ -5,6 +5,7 @@
  * - Route change handling
  * - Accessible label
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 'use client';
@@ -14,12 +15,7 @@ import { useRouter } from 'next/navigation';
 import { Gauge } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const LatencyTestButton = () => {
   const router = useRouter();

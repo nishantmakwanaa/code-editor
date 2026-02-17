@@ -5,6 +5,7 @@
  * - Room joining helper
  * - Join verification
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { expect, Page } from '@playwright/test';
@@ -13,10 +14,7 @@ export async function createRoom(page: Page, name: string) {
   await page.goto('/');
 
   // Fill name and create room
-  await page
-    .getByLabel('Create a Room')
-    .getByPlaceholder('Enter your name')
-    .fill(name);
+  await page.getByLabel('Create a Room').getByPlaceholder('Enter your name').fill(name);
   await page.getByRole('button', { name: 'Create Room' }).click();
 
   // Wait for room to be created and URL to change /room/:id

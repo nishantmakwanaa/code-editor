@@ -5,6 +5,7 @@
  * - Room-based updates
  * - User identity handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import type { Socket } from 'socket.io';

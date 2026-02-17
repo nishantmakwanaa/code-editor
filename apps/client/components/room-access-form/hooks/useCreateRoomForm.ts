@@ -5,6 +5,7 @@
  * - Room name validation
  * - Default values handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -17,7 +18,7 @@ export const useCreateRoomForm = () => {
   return useForm<CreateRoomForm>({
     resolver: zodResolver(createRoomSchema),
     defaultValues: {
-      name: '',
-    },
+      name: ''
+    }
   });
 };

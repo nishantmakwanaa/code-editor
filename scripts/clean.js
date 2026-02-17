@@ -4,6 +4,8 @@
  * - Directory cleanup
  * - Interactive prompts
  * - Process cleanup
+ *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 const fs = require('fs/promises');
@@ -24,21 +26,21 @@ const dirsToClean = [
   'packages/types/.turbo',
   'packages/types/dist',
   '.turbo',
-  'node_modules',
+  'node_modules'
 ];
 
 function createPrompt() {
   return readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
   });
 }
 
 async function promptUser(question) {
   const rl = createPrompt();
   try {
-    return await new Promise((resolve) => {
-      rl.question(question, (answer) => {
+    return await new Promise(resolve => {
+      rl.question(question, answer => {
         resolve(answer.toLowerCase().startsWith('y'));
       });
     });
@@ -105,13 +107,13 @@ async function removePath(filepath) {
     if (isPermissionError) {
       console.warn(`⚠️ Permission error removing ${filepath}`);
       const shouldKill = await promptUser(
-        '❓ Would you like to terminate Node processes and try again? (y/N) ',
+        '❓ Would you like to terminate Node processes and try again? (y/N) '
       );
 
       if (shouldKill) {
         await killProcesses();
         // Wait for processes to fully terminate
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         // Try removal again
         return removePath(filepath);
       }
@@ -156,12 +158,12 @@ process.on('SIGINT', () => {
   process.exit(1);
 });
 
-process.on('unhandledRejection', (err) => {
+process.on('unhandledRejection', err => {
   console.error('🚨 Unhandled promise rejection:', err);
   process.exit(1);
 });
 
-clean().catch((err) => {
+clean().catch(err => {
   console.error('❌ Fatal error:', err);
   process.exit(1);
 });

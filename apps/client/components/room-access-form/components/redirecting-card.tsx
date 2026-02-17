@@ -5,6 +5,7 @@
  * - Spinner indicator
  * - Accessible status message
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';

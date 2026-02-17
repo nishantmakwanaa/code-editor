@@ -6,6 +6,7 @@
  * - Room ID formatting
  * - Socket communications
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { ChangeEvent } from 'react';
@@ -20,7 +21,7 @@ import { getSocket } from '@/lib/socket';
 import type { JoinRoomForm } from './types';
 
 export const createRoom = (name: string): Promise<string> => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const socket = getSocket();
 
     socket.emit(RoomServiceMsg.CREATE, name);
@@ -60,7 +61,7 @@ export const joinRoom = (roomId: string, name: string): Promise<boolean> => {
  */
 export const onRoomIdChange = (
   e: ChangeEvent<HTMLInputElement>,
-  setValue: UseFormSetValue<JoinRoomForm>,
+  setValue: UseFormSetValue<JoinRoomForm>
 ) => {
   const rawValue = e.target.value.toUpperCase();
   const formattedValue = formatRoomId(rawValue);
@@ -70,7 +71,7 @@ export const onRoomIdChange = (
 
   // Update form value
   setValue('roomId', formattedValue, {
-    shouldValidate: formattedValue.length === 9,
+    shouldValidate: formattedValue.length === 9
   });
 };
 
@@ -94,5 +95,4 @@ const formatRoomId = (value: string) => {
  * @param value
  * @returns
  */
-export const isRoomIdValid = (value: string) =>
-  /^[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(value);
+export const isRoomIdValid = (value: string) => /^[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(value);

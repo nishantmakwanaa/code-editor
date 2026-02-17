@@ -5,6 +5,7 @@
  * - Commit message handling
  * - Default values management
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -18,7 +19,7 @@ export const useCommitForm = () => {
     resolver: zodResolver(commitSchema),
     defaultValues: {
       fileName: '',
-      commitSummary: '',
-    },
+      commitSummary: ''
+    }
   });
 };

@@ -1,6 +1,7 @@
 /**
  * This file configures the initialization of Sentry on the client.
  *
+ * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
  * code by Sentry CLI.
  */
 
@@ -19,7 +20,7 @@ if (!isCi) {
     tracesSampleRate: 1, // Sample rate for performance monitoring
     replaysSessionSampleRate: 0.1, // Sample rate for session replay
     replaysOnErrorSampleRate: 1.0, // Sample rate for error replay
-    debug: false, // Print useful information to the console while setting up Sentry
+    debug: false // Print useful information to the console while setting up Sentry
   });
 }
 

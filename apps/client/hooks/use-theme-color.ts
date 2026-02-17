@@ -5,6 +5,7 @@
  * - Dark/light mode detection
  * - Meta tag handling
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import { useEffect } from 'react';
@@ -20,10 +21,7 @@ export function useThemeColor() {
 
     if (themeColorMeta) {
       // Update the color based on theme
-      themeColorMeta.setAttribute(
-        'content',
-        resolvedTheme === 'dark' ? '#0a0a0a' : '#eef1f7',
-      );
+      themeColorMeta.setAttribute('content', resolvedTheme === 'dark' ? '#0a0a0a' : '#eef1f7');
     }
   }, [resolvedTheme]);
 }

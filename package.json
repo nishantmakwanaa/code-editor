@@ -1,14 +1,14 @@
 {
-  "name": "alpha",
+  "name": "codex",
   "private": true,
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
     "build:client": "turbo build --filter=client...",
     "build:server": "turbo build --filter=server...",
-    "lint:check": "turbo lint:check",
+    "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
-    "format:check": "prettier --check **/*.{js,mjs,jsx,ts,tsx,json}",
+    "format": "prettier --check **/*.{js,mjs,jsx,ts,tsx,json}",
     "format:fix": "prettier --write **/*.{js,mjs,jsx,ts,tsx,json}",
     "test:client": "turbo test:e2e",
     "test:client:ui": "turbo test:e2e:ui",
@@ -22,32 +22,37 @@
   },
   "lint-staged": {
     "**/*.{js,mjs,jsx,ts,tsx,json}": [
-      "pnpm format:check"
+      "pnpm format:fix"
     ],
-    "apps/client/**/*.{js,mjs,jsx,ts,tsx}": [
-      "pnpm --filter=client lint:check"
+    "apps/client/**/*.{js,mjs,jsx,ts,tsx,json}": [
+      "pnpm --filter=client lint:fix"
     ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@prettier/plugin-oxc": "^0.0.4",
-    "@types/simple-peer": "^9.11.8",
+    "@types/simple-peer": "^9.11.9",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.1",
     "prettier-plugin-classnames": "^0.7.9",
-    "prettier-plugin-ember-template-tag": "^2.1.0",
+    "prettier-plugin-ember-template-tag": "^2.1.3",
     "prettier-plugin-merge": "^0.7.4",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "rimraf": "^6.0.1",
-    "turbo": "^2.5.8",
+    "rimraf": "^6.1.2",
+    "turbo": "^2.8.8",
     "typescript": "^5.9.3"
   },
   "optionalDependencies": {
-    "bufferutil": "^4.0.9",
-    "utf-8-validate": "^6.0.5"
+    "bufferutil": "^4.1.0",
+    "utf-8-validate": "^6.0.6"
   },
-  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
+  "packageManager": "pnpm@9.15.4",
+  "pnpm": {
+    "patchedDependencies": {
+      "monaco-themes": "patches/monaco-themes.patch"
+    }
+  }
 }

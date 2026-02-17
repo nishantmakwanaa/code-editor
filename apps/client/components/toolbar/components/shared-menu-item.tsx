@@ -6,13 +6,14 @@
  * - Menu separators
  * - Keyboard shortcuts
  *
+ * By Dulapah Vibulsanti (https://dulapahv.dev)
  */
 
 import {
   MenubarCheckboxItem,
   MenubarItem,
   MenubarSeparator,
-  MenubarShortcut,
+  MenubarShortcut
 } from '@/components/ui/menubar';
 
 import type { MenuItem } from '../menu-config';
@@ -24,21 +25,14 @@ interface SharedMenuItemProps {
   hideShortcut?: boolean;
 }
 
-export const SharedMenuItem = ({
-  item,
-  actions,
-  hideShortcut,
-}: SharedMenuItemProps) => {
+export const SharedMenuItem = ({ item, actions, hideShortcut }: SharedMenuItemProps) => {
   if (item === 'separator') {
     return <MenubarSeparator />;
   }
 
   if (item.type === 'checkbox') {
     return (
-      <MenubarCheckboxItem
-        checked={item.checked}
-        onCheckedChange={() => actions[item.action]()}
-      >
+      <MenubarCheckboxItem checked={item.checked} onCheckedChange={() => actions[item.action]()}>
         {item.icon}
         {item.label}
       </MenubarCheckboxItem>
@@ -50,9 +44,7 @@ export const SharedMenuItem = ({
       {item.icon}
       {item.label}
       {!hideShortcut && item.shortcut && (
-        <MenubarShortcut className="pl-2 max-[486px]:hidden">
-          {item.shortcut}
-        </MenubarShortcut>
+        <MenubarShortcut className="pl-2 max-[486px]:hidden">{item.shortcut}</MenubarShortcut>
       )}
     </MenubarItem>
   );
