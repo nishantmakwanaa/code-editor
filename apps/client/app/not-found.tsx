@@ -10,6 +10,7 @@
 
 'use client';
 
+import type { Route } from 'next';
 import Link from 'next/link';
 
 import { Home } from 'lucide-react';
@@ -29,7 +30,7 @@ export default function NotFound() {
         </AlertDescription>
         <div className="mt-6 flex justify-end">
           <Button variant="default" asChild className="gap-2">
-            <Link href={BASE_CLIENT_URL}>
+            <Link href={BASE_CLIENT_URL as Route}>
               <Home className="size-4" />
               Return Home
             </Link>

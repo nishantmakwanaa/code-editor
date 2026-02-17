@@ -12,6 +12,7 @@
 'use client';
 
 import { useEffect, useState, type ChangeEvent } from 'react';
+import type { Route } from 'next';
 import Link from 'next/link';
 
 import { ArrowLeft } from 'lucide-react';
@@ -143,7 +144,7 @@ const LatencyTest = () => {
   return (
     <Card className="mx-auto w-full max-w-3xl">
       <Button variant="link" className="text-foreground mt-4 px-6" asChild>
-        <Link href={BASE_CLIENT_URL}>
+        <Link href={BASE_CLIENT_URL as Route}>
           <ArrowLeft className="mr-2 size-4" />
           Go back
         </Link>
