@@ -7,32 +7,38 @@
     "./message": {
       "types": "./dist/message.d.ts",
       "import": "./dist/message.js",
-      "default": "./message.ts"
+      "require": "./dist/message.js",
+      "default": "./dist/message.js"
     },
     "./operation": {
       "types": "./dist/operation.d.ts",
       "import": "./dist/operation.js",
-      "default": "./operation.ts"
+      "require": "./dist/operation.js",
+      "default": "./dist/operation.js"
     },
     "./pointer": {
       "types": "./dist/pointer.d.ts",
       "import": "./dist/pointer.js",
-      "default": "./pointer.ts"
+      "require": "./dist/pointer.js",
+      "default": "./dist/pointer.js"
     },
     "./scroll": {
       "types": "./dist/scroll.d.ts",
       "import": "./dist/scroll.js",
-      "default": "./scroll.ts"
+      "require": "./dist/scroll.js",
+      "default": "./dist/scroll.js"
     },
     "./terminal": {
       "types": "./dist/terminal.d.ts",
       "import": "./dist/terminal.js",
-      "default": "./terminal.ts"
+      "require": "./dist/terminal.js",
+      "default": "./dist/terminal.js"
     },
     "./user": {
       "types": "./dist/user.d.ts",
       "import": "./dist/user.js",
-      "default": "./user.ts"
+      "require": "./dist/user.js",
+      "default": "./dist/user.js"
     }
   },
   "scripts": {
