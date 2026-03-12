@@ -4,7 +4,7 @@
  * - Hyphen removal
  * - Room ID formatting
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export const normalizeRoomId = (roomId: string): string => {

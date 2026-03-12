@@ -6,7 +6,7 @@
  * - About and latency test buttons
  * - Server status indicator
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Suspense } from 'react';

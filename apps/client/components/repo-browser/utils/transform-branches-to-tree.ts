@@ -5,7 +5,7 @@
  * - Tree item icon mapping
  * - Type-safe conversion
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { GitBranch } from 'lucide-react';

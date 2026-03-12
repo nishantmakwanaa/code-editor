@@ -6,7 +6,7 @@
  * - Multi-browser support
  * - Screenshot and trace capture
  *
- * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
+ * Modified By Nishant Makwana (https://nishantmakwanaa.lovable.app) from auto-generated
  * code by Playwright CLI.
  */
 

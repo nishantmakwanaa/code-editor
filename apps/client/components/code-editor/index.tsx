@@ -6,7 +6,7 @@
  * - Real-time sync
  * - Scroll synchronization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { memo, useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';

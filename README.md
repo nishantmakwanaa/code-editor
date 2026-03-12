@@ -1,14 +1,18 @@
-# CodeX - Code Collaboration Platform
+# Code Editor - Code Collaboration Platform
 
-**Owned by Nishant Makwana**
+**Created by [Nishant Makwana](https://nishantmakwanaa.lovable.app)**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-nishantmakwanaa-blue?logo=linkedin)](https://linkedin.com/in/nishantmakwanaa)
+[![GitHub](https://img.shields.io/badge/GitHub-nishantmakwanaa-black?logo=github)](https://github.com/nishantmakwanaa)
+[![Portfolio](https://img.shields.io/badge/Portfolio-nishantmakwanaa.lovable.app-purple)](https://nishantmakwanaa.lovable.app)
 
 <div align="center">
-  <img src="apps/client/public/images/cover.png" width="630" alt="codex cover image"/>
+  <img src="apps/client/public/images/cover.png" width="630" alt="code editor cover image"/>
 </div>
 
 <br />
 
-**CodeX is an online code collaboration platform that enables real-time coding, cursor sharing, live UI preview, and video communication with integrated Git support—no sign-up required.**
+**Code Editor is an online code collaboration platform that enables real-time coding, cursor sharing, live UI preview, and video communication with integrated Git support—no sign-up required.**
 
 For detailed usage instructions and feature documentation, please see the **[User Manual](manual.md)**.
 
@@ -23,7 +27,7 @@ For detailed usage instructions and feature documentation, please see the **[Use
 
 ## Table of Contents
 
-- [CodeX - Code Collaboration Platform](#codex---code-collaboration-platform)
+- [Code Editor - Code Collaboration Platform](#code-editor---code-collaboration-platform)
   - [Features](#features)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
@@ -47,7 +51,7 @@ For detailed usage instructions and feature documentation, please see the **[Use
 The project is organized as a [monorepo](https://en.wikipedia.org/wiki/Monorepo) using [Turborepo](https://turbo.build/repo/docs):
 
 ```txt
-CodeX
+Code Editor
 ├── apps/                   # Application packages
 │   ├── client/             # Frontend Next.js application
 │   │   ├── public/         # Static assets
@@ -90,8 +94,8 @@ After checking the [prerequisites](#prerequisites) above, follow these steps to 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/dulapahv/CodeX.git
-   cd CodeX
+   git clone https://github.com/nishantmakwanaa/code-editor.git
+   cd code-editor
    ```
 
 2. **Install dependencies**
@@ -188,7 +192,7 @@ The build artifacts of the frontend will be available in the `apps/client/.next`
 
 ## Deployment
 
-**Owned by Nishant Makwana.** Deploy frontend to [Vercel](https://vercel.com) and backend to [Render](https://render.com).
+Deploy frontend to [Vercel](https://vercel.com) and backend to [Render](https://render.com).
 
 ### Where to set env
 
@@ -367,6 +371,14 @@ Contributions are welcome! To contribute to this project, follow these steps:
 ## User Manual
 
 For detailed usage instructions and feature documentation, please refer to the **[User Manual](manual.md)**.
+
+## Author
+
+**Nishant Makwana**
+
+- Portfolio: [nishantmakwanaa.lovable.app](https://nishantmakwanaa.lovable.app)
+- LinkedIn: [linkedin.com/in/nishantmakwanaa](https://linkedin.com/in/nishantmakwanaa)
+- GitHub: [github.com/nishantmakwanaa](https://github.com/nishantmakwanaa)
 
 ## License
 

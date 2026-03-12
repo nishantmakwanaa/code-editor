@@ -4,7 +4,7 @@
  * - File name field
  * - Commit message field
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export type CommitForm = {

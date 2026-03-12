@@ -5,7 +5,7 @@
  * - Socket/user mapping
  * - Data persistence
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { Socket } from 'socket.io';

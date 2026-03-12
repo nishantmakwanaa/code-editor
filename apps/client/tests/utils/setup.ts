@@ -5,7 +5,7 @@
  * - Room joining helper
  * - Join verification
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { expect, Page } from '@playwright/test';

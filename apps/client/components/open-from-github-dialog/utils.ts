@@ -5,7 +5,7 @@
  * - Tree data item type checking
  * - Path normalization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { itemType, type ExtendedTreeDataItem } from '@/components/repo-browser/types/tree';

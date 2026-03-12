@@ -5,7 +5,7 @@
  * - Viewport line visibility checks
  * - Cursor style handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { RefObject } from 'react';

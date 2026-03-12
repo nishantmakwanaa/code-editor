@@ -5,7 +5,7 @@
  * - Dark/light mode detection
  * - Meta tag handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useEffect } from 'react';

@@ -5,7 +5,7 @@
  * - Pre-installed libraries list
  * - External links
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { CircleHelp } from 'lucide-react';

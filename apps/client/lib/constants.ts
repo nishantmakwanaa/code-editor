@@ -34,19 +34,19 @@ export const GITHUB_CLIENT_SECRET = IS_DEV_ENV
 
 export const NAME_MAX_LENGTH = 64;
 
-export const SITE_NAME = 'CodeX - Code Collaboration Platform';
+export const SITE_NAME = 'Code Editor - Code Collaboration Platform';
 export const SITE_DESCRIPTION =
-  'Your collaborative coding space, reimagined. Code together now on CodeX, no sign-up required.';
+  'Your collaborative coding space, reimagined. Code together now on Code Editor, no sign-up required.';
 export const INVITED_DESCRIPTION = 'You have been invited to a coding session. Happy coding!';
 export const LATENCY_TEST_TITLE = 'Server Latency Test';
-export const LATENCY_TEST_DESCRIPTION = 'Test your latency to the CodeX server.';
+export const LATENCY_TEST_DESCRIPTION = 'Test your latency to the Code Editor server.';
 export const GITHUB_OAUTH_TITLE = 'GitHub OAuth Callback';
 export const GITHUB_OAUTH_DESCRIPTION = 'This page is used to handle the GitHub OAuth callback.';
 export const NAME = 'Nishant Makwana';
-export const PORTFOLIO_URL = process.env.NEXT_PUBLIC_PORTFOLIO_URL || 'https://github.com';
+export const PORTFOLIO_URL = process.env.NEXT_PUBLIC_PORTFOLIO_URL || 'https://nishantmakwanaa.lovable.app';
 export const CONTACT_URL = process.env.NEXT_PUBLIC_CONTACT_URL || PORTFOLIO_URL;
-export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL || 'https://github.com';
-export const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com';
+export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL || 'https://github.com/nishantmakwanaa';
+export const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/nishantmakwanaa';
 
 export const EDITOR_SETTINGS_KEY = 'editor-settings';
 

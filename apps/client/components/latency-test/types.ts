@@ -4,7 +4,7 @@
  * - Test result data structure
  * - Statistical calculation types
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export type TestResult = {

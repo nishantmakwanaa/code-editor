@@ -5,7 +5,7 @@
  * - Commit message validation
  * - Type inference exports
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { z } from 'zod';

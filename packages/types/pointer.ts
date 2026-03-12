@@ -4,6 +4,6 @@
  * - Index 0: x-coordinate
  * - Index 1: y-coordinate
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 export type Pointer = [number, number];

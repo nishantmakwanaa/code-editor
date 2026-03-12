@@ -5,7 +5,7 @@
  * - Indentation structure simulation
  * - Variable width placeholders
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Skeleton } from '@/components/ui/skeleton';

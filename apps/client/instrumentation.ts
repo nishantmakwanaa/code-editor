@@ -5,7 +5,7 @@
  * - Edge runtime monitoring
  * - Environment detection
  *
- * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
+ * Modified By Nishant Makwana (https://nishantmakwanaa.lovable.app) from auto-generated
  * code by Sentry CLI.
  */
 

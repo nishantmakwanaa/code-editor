@@ -3,7 +3,7 @@
  * - Get initials from full name
  * - Format display name with "you" suffix
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { User } from '@codex/types/user';

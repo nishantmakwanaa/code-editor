@@ -6,7 +6,7 @@
  * - Args/stdin input handling
  * - Status indication
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';

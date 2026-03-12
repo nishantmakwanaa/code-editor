@@ -5,7 +5,7 @@
  * - Markdown content reading
  * - Socket-based sync
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { RefObject } from 'react';

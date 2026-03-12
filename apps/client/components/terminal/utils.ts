@@ -5,7 +5,7 @@
  * - Timestamp formatting
  * - Message type coloring
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { ExecutionResultType, type ExecutionResult } from '@codex/types/terminal';

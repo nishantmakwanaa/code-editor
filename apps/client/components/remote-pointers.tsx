@@ -6,7 +6,7 @@
  * - Smooth fade animations
  * - Viewport scaling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import React, { useCallback, useEffect, useState } from 'react';

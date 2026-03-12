@@ -1,7 +1,7 @@
 /**
  * This file configures the initialization of Sentry for edge features (middleware, edge routes, and so on).
  *
- * Modified by Dulapah Vibulsanti (https://dulapahv.dev) from auto-generated
+ * Modified By Nishant Makwana (https://nishantmakwanaa.lovable.app) from auto-generated
  * code by Sentry CLI.
  */
 

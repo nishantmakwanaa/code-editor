@@ -5,7 +5,7 @@
  * - Extended tree item interface
  * - Repository structure types
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { TreeDataItem } from '@/components/tree';

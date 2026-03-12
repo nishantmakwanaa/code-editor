@@ -4,7 +4,7 @@
  * - User ID
  * - Username
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export interface User {

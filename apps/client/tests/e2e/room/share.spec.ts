@@ -5,7 +5,7 @@
  * - Room ID verification
  * - Invite link generation
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { expect, test } from '@playwright/test';

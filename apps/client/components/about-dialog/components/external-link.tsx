@@ -5,7 +5,7 @@
  * - External URL handling
  * - Accessibility support
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import Image from 'next/image';

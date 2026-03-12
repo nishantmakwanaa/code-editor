@@ -6,7 +6,7 @@
  * - Repository content retrieval
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { cookies } from 'next/headers';

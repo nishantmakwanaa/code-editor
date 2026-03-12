@@ -6,7 +6,7 @@
  * - Message handling
  * - CORS configuration
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { SignalData } from 'simple-peer';

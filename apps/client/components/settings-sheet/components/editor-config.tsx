@@ -6,7 +6,7 @@
  * - Real-time setting updates
  * - Settings persistence
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

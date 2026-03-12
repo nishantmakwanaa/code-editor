@@ -5,7 +5,7 @@
  * - Toast notifications
  * - Success/error messaging
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { ExternalLink } from 'lucide-react';

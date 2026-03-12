@@ -5,7 +5,7 @@
  * - Route change handling
  * - Accessible label
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 'use client';

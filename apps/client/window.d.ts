@@ -4,7 +4,7 @@
  * - Auth window reference
  * - Type definitions
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 declare global {

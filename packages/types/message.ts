@@ -6,7 +6,7 @@
  * - Scroll sync messages
  * - Video stream messages
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export enum RoomServiceMsg {

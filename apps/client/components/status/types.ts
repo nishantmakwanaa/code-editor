@@ -5,7 +5,7 @@
  * - API response types
  * - Status attributes
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export type ServiceStatus = {

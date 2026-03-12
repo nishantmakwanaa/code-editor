@@ -5,7 +5,7 @@
  * - Enable/disable toggle
  * - Permission handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useCallback, useState, type ElementType } from 'react';

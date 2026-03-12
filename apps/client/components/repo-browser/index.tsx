@@ -6,7 +6,7 @@
  * - File selection
  * - Loading states
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import {

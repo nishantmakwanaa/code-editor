@@ -5,7 +5,7 @@
  * - OAuth token handling
  * - User data types
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies';

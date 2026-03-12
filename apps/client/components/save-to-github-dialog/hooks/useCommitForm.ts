@@ -5,7 +5,7 @@
  * - Commit message handling
  * - Default values management
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';

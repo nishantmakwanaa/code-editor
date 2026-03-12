@@ -5,7 +5,7 @@
  * - Color generation and caching
  * - Bulk operations support
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { User } from '@codex/types/user';

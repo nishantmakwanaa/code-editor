@@ -5,7 +5,7 @@
  * - Empty name validation
  * - Form submission
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { expect, test } from '@playwright/test';

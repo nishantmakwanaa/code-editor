@@ -4,6 +4,6 @@
  * Index 0: scrollLeft
  * Index 1: scrollTop
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 export type Scroll = [number, number];

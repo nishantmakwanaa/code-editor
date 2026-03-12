@@ -5,7 +5,7 @@
  * - Panel toggle actions
  * - Editor command bindings
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useEffect, useRef } from 'react';

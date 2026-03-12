@@ -6,7 +6,7 @@
  * - Download/clear logs
  * - Welcome message
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Dispatch, SetStateAction, useEffect, useRef } from 'react';

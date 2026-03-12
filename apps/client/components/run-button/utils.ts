@@ -5,7 +5,7 @@
  * - Output formatting
  * - Socket messaging
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { Dispatch, RefObject, SetStateAction } from 'react';

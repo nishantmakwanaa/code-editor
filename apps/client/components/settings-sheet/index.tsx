@@ -6,7 +6,7 @@
  * - GitHub connection
  * - Settings import/export
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import {

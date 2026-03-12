@@ -5,7 +5,7 @@
  * - CSS class merging
  * - Error parsing
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { clsx, type ClassValue } from 'clsx';

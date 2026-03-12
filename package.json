@@ -1,5 +1,5 @@
 {
-  "name": "codex",
+  "name": "code-editor",
   "private": true,
   "scripts": {
     "dev": "turbo dev",

@@ -5,7 +5,7 @@
  * - Accessible tooltip
  * - Room ID handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useRef } from 'react';

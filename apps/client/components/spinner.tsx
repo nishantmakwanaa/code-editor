@@ -5,7 +5,7 @@
  * - Color variants: default, primary, secondary, destructive, muted
  * - Smooth animation
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import * as React from 'react';

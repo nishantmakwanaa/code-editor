@@ -5,7 +5,7 @@
  * - Accessible tooltip
  * - Animated icon button
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Info } from 'lucide-react';

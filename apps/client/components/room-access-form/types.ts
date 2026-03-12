@@ -4,7 +4,7 @@
  * - Create room form types
  * - Join room form types
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export interface CreateRoomForm {

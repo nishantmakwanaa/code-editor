@@ -6,7 +6,7 @@
  * - Preview image with loading state
  * - External links
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useState } from 'react';

@@ -5,7 +5,7 @@
  * - Scrollable interface
  * - Accessible markup
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useTheme } from 'next-themes';

@@ -5,7 +5,7 @@
  * - Speaker status indicator
  * - Local/remote state handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Mic, MicOff, Volume2, VolumeOff } from 'lucide-react';

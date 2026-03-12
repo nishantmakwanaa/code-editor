@@ -5,7 +5,7 @@
  * - Room name validation
  * - Default values handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { zodResolver } from '@hookform/resolvers/zod';

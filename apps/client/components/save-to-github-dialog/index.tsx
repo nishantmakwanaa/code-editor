@@ -6,7 +6,7 @@
  * - Repository browser integration
  * - File commit handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import {

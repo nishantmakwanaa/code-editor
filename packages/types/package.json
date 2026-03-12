@@ -3,6 +3,32 @@
   "version": "1.0.0",
   "private": true,
   "types": "./dist/index.d.ts",
+  "exports": {
+    "./message": {
+      "types": "./dist/message.d.ts",
+      "default": "./dist/message.js"
+    },
+    "./operation": {
+      "types": "./dist/operation.d.ts",
+      "default": "./dist/operation.js"
+    },
+    "./pointer": {
+      "types": "./dist/pointer.d.ts",
+      "default": "./dist/pointer.js"
+    },
+    "./scroll": {
+      "types": "./dist/scroll.d.ts",
+      "default": "./dist/scroll.js"
+    },
+    "./terminal": {
+      "types": "./dist/terminal.d.ts",
+      "default": "./dist/terminal.js"
+    },
+    "./user": {
+      "types": "./dist/user.d.ts",
+      "default": "./dist/user.js"
+    }
+  },
   "scripts": {
     "build": "tsc"
   }

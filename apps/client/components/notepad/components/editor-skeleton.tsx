@@ -5,7 +5,7 @@
  * - Animated content placeholders
  * - Responsive layout matching editor
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { Skeleton } from '@/components/ui/skeleton';

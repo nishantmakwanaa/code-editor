@@ -5,7 +5,7 @@
  * - Theme preview with CSS variable updates
  * - Theme persistence
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useEffect, useState } from 'react';

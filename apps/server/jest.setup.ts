@@ -5,7 +5,7 @@
  * - Environment configuration
  * - Helper imports
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 const LOCAL_SERVER = 'http://localhost:3001';

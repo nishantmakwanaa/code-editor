@@ -5,7 +5,7 @@
  * - Desktop/mobile specific props
  * - Menu action definitions
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export interface MenuProps {

@@ -6,7 +6,7 @@
  * - Loading states
  * - Error display
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { ArrowRight } from 'lucide-react';

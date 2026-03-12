@@ -5,7 +5,7 @@
  * - Authentication status check
  * - Session cleanup
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { NextRequest } from 'next/server';

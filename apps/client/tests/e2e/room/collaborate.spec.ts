@@ -5,7 +5,7 @@
  * - Multi-user editing
  * - Content verification
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { expect, test } from '@playwright/test';

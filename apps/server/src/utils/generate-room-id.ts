@@ -5,7 +5,7 @@
  * - Alphanumeric characters
  * - Uppercase letters only
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 export const generateRoomID = () => {

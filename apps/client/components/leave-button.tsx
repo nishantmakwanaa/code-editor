@@ -5,7 +5,7 @@
  * - Accessible controls
  * - Styling customization
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { FocusEvent, useRef } from 'react';

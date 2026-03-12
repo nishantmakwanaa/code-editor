@@ -6,7 +6,7 @@
  * - Theme-aware rendering
  * - Error handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { SandpackLayout, SandpackPreview, SandpackProvider } from '@codesandbox/sandpack-react';

@@ -6,7 +6,7 @@
  * - Responsive dialog/drawer
  * - Copy success feedback
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';

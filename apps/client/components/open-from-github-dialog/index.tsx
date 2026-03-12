@@ -6,7 +6,7 @@
  * - Authentication handling
  * - Responsive dialog/drawer
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import {

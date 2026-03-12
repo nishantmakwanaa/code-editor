@@ -6,7 +6,7 @@
  * - Execution time display
  * - Error output handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { ExecutionResult } from '@codex/types/terminal';

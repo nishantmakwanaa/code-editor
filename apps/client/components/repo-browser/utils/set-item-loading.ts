@@ -5,7 +5,7 @@
  * - Loading state management
  * - Immutable state updates
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { Dispatch, SetStateAction } from 'react';

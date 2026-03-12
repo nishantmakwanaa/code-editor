@@ -6,7 +6,7 @@
  * - Editor command access
  * - Dialog/sheet management
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';

@@ -5,7 +5,7 @@
  * - Branch path handling
  * - Directory/file path handling
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { itemType, type ExtendedTreeDataItem } from '@/components/repo-browser/types/tree';

@@ -5,7 +5,7 @@
  * - Disallowed paths
  * - Host URL
  *
- * By Dulapah Vibulsanti (https://dulapahv.dev)
+ * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import type { MetadataRoute } from 'next';
