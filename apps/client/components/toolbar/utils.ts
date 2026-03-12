@@ -129,7 +129,7 @@ export const openLocal = (
 export const saveLocal = (
   monaco: Monaco,
   editor: monaco.editor.IStandaloneCodeEditor | null,
-  filename = `codex-${new Date().toLocaleString('en-GB').replace(/[/:, ]/g, '-')}`
+  filename = `code-editor-${new Date().toLocaleString('en-GB').replace(/[/:, ]/g, '-')}`
 ): void => {
   if (!editor) {
     throw new Error('Editor instance is required');

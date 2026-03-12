@@ -75,7 +75,7 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
 
   if (isDesktop) {
     return (
-      <Dialog open={isOpen} onOpenChange={setIsOpen} aria-label="About CodeX">
+      <Dialog open={isOpen} onOpenChange={setIsOpen} aria-label="About Code Editor">
         <DialogContent className={cn('max-w-2xl', forceDark && 'dark')}>
           <DialogHeader className="text-foreground text-left">
             <DialogTitle>{SITE_NAME}</DialogTitle>
@@ -85,10 +85,10 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
             </DialogDescription>
           </DialogHeader>
 
-          <div className="relative aspect-[600/315]" aria-label="CodeX application preview">
+          <div className="relative aspect-[600/315]" aria-label="Code Editor application preview">
             <Image
               src="/images/cover.png"
-              alt="CodeX application interface preview"
+              alt="Code Editor application interface preview"
               className="absolute rounded-md object-cover"
               fill
               sizes="1200px"
@@ -109,9 +109,9 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
 
           <div className="text-foreground space-y-2">
             <p className="text-center">
-              Made with 💕 by <span className="font-medium">dulapahv</span>
+              Built by <span className="font-medium">Nishant Makwana</span>
             </p>
-            <nav className="grid grid-cols-4 gap-2" aria-label="External links">
+            <nav className="grid grid-cols-3 gap-2" aria-label="External links">
               <ExternalLink forceDark={forceDark} />
             </nav>
           </div>
@@ -129,7 +129,7 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
   }
 
   return (
-    <Drawer open={isOpen} onOpenChange={setIsOpen} aria-label="About CodeX">
+    <Drawer open={isOpen} onOpenChange={setIsOpen} aria-label="About Code Editor">
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle className="text-left">{SITE_NAME}</DrawerTitle>
@@ -139,11 +139,11 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
           </DrawerDescription>
         </DrawerHeader>
 
-        <div className="w-full px-4" aria-label="CodeX application preview">
+        <div className="w-full px-4" aria-label="Code Editor application preview">
           <div className="relative aspect-[600/315] w-full max-w-full">
             <Image
               src="/images/cover.png"
-              alt="CodeX application interface preview"
+              alt="Code Editor application interface preview"
               className="rounded-md object-cover"
               fill
               sizes="(max-width: 768px) 100vw, 600px"
@@ -167,7 +167,7 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
 
         <div className="mx-4 space-y-2">
           <p className="text-center">
-            Made with 💕 by <span className="font-medium">dulapahv</span>
+            Built by <span className="font-medium">Nishant Makwana</span>
           </p>
           <nav className="grid grid-cols-2 gap-2" aria-label="External links">
             <ExternalLink forceDark={forceDark} />

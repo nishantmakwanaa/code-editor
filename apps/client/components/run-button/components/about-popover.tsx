@@ -10,6 +10,7 @@
 
 import { Info } from 'lucide-react';
 
+import { DOCS_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Separator } from '@/components/ui/separator';
@@ -45,12 +46,12 @@ const AboutPopover = () => (
             <p>
               For a list of supported programming languages, refer to the{' '}
               <a
-                href="https://github.com/dulapahv/CodeX/blob/main/manual.md#supported-execution-languages"
+                href={DOCS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-muted-foreground font-medium underline underline-offset-4 !transition-all"
               >
-                manual
+                project website
               </a>
               .
             </p>

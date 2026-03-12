@@ -10,13 +10,28 @@
 
 import { NextResponse } from 'next/server';
 
-import { KASCA_SERVER_MONITOR_ID } from '@/lib/constants';
+import { BASE_SERVER_URL, KASCA_SERVER_MONITOR_ID } from '@/lib/constants';
 import type { BetterStackResponse } from '@/components/status/types';
 
 // export const runtime = 'edge';
 
 export async function GET() {
   try {
+    if (!KASCA_SERVER_MONITOR_ID || !process.env.BETTERSTACK_API_KEY) {
+      const response = await fetch(BASE_SERVER_URL, {
+        method: 'GET',
+        cache: 'no-store'
+      });
+
+      return NextResponse.json({
+        data: {
+          attributes: {
+            status: response.ok ? 'up' : 'down'
+          }
+        }
+      });
+    }
+
     const response = await fetch(
       `https://uptime.betterstack.com/api/v2/monitors/${KASCA_SERVER_MONITOR_ID}`,
       {
@@ -34,6 +49,15 @@ export async function GET() {
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error fetching server status:', error);
-    return NextResponse.json({ error: 'Failed to fetch server status' }, { status: 500 });
+    return NextResponse.json(
+      {
+        data: {
+          attributes: {
+            status: 'down'
+          }
+        }
+      },
+      { status: 200 }
+    );
   }
 }

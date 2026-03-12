@@ -25,11 +25,11 @@ export default async function Page({ searchParams }: PageProps<'/'>) {
 
   return (
     <>
-      <div aria-hidden="true" role="presentation" className="fixed inset-0 -z-10 bg-[#111623]" />
+      <div aria-hidden="true" role="presentation" className="fixed inset-0 -z-10 bg-[#0d1518]" />
       <div
         aria-hidden="true"
         role="presentation"
-        className="fixed inset-0 -z-10 bg-gradient-to-tr from-[#fb568a]/50 via-[#c240ff]/50 to-[#3b77fd]/50 to-90%"
+        className="fixed inset-0 -z-10 bg-gradient-to-br from-[#ef7d57]/35 via-[#f5c45b]/20 to-[#2f8f83]/40"
       />
       <div className="dark fixed inset-0 -z-10">
         <AnimatedGridBackground />
@@ -45,7 +45,7 @@ export default async function Page({ searchParams }: PageProps<'/'>) {
               <h1 className="text-foreground flex flex-row items-start gap-2 text-4xl font-bold tracking-tight sm:text-5xl">
                 <Image
                   src="/images/codex-logo.svg"
-                  alt="CodeX Logo"
+                  alt="Code Editor logo"
                   width={96}
                   height={96}
                   className="size-20 min-[1189px]:size-24"
@@ -56,10 +56,10 @@ export default async function Page({ searchParams }: PageProps<'/'>) {
                   <span className="flex items-end gap-2 min-[1189px]:items-baseline">
                     <span>now on</span>
                     <span
-                      className="bg-gradient-to-r from-[#fb568a] to-[#e456fb] bg-clip-text text-transparent
+                      className="bg-gradient-to-r from-[#ef7d57] via-[#f5c45b] to-[#4fb0a4] bg-clip-text text-transparent
                         drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]"
                     >
-                      CodeX
+                      Code Editor
                     </span>
                   </span>
                 </div>

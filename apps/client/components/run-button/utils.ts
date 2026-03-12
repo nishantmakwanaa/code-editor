@@ -16,6 +16,7 @@ import type * as monaco from 'monaco-editor';
 import { CodeServiceMsg } from '@codex/types/message';
 import { ExecutionResultType, type ExecutionResult } from '@codex/types/terminal';
 
+import { DOCS_URL } from '@/lib/constants';
 import { getSocket } from '@/lib/socket';
 import { parseError } from '@/lib/utils';
 
@@ -129,7 +130,7 @@ export const executeCode = async (
 
     if (!response.ok) {
       throw new Error(
-        `HTTP error! status: ${response.status}\nThis language may not be supported or the server is down.\nList of supported languages: https://github.com/dulapahv/CodeX/blob/main/manual.md#supported-execution-languages.`
+        `HTTP error! status: ${response.status}\nThis language may not be supported or the server is down.\nMore details: ${DOCS_URL}.`
       );
     }
 

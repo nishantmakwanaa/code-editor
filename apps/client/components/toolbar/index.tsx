@@ -14,7 +14,7 @@ import { useEffect, useRef, type Dispatch, type SetStateAction } from 'react';
 import { Monaco } from '@monaco-editor/react';
 import type * as monaco from 'monaco-editor';
 
-import { REPO_URL } from '@/lib/constants';
+import { DOCS_URL } from '@/lib/constants';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { AboutDialog, type AboutDialogRef } from '@/components/about-dialog';
 import { LeaveDialog, type LeaveDialogRef } from '@/components/leave-dialog';
@@ -255,7 +255,7 @@ const Toolbar = ({
     toggleWebcamPanel: () => setShowWebcam(show => !show),
     toggleSandpackPanel: () => setShowLivePreview(show => !show),
     manual: () => {
-      window.open(`${REPO_URL}/blob/main/manual.md`, '_blank');
+      window.open(DOCS_URL, '_blank');
     },
     about: () => aboutDialogRef.current?.openDialog()
   };

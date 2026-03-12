@@ -10,10 +10,10 @@
 
 import Image from 'next/image';
 
-import { Send } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { CONTACT_URL, GITHUB_URL, PORTFOLIO_URL, REPO_URL } from '@/lib/constants';
+import { GITHUB_URL, LINKEDIN_URL, PORTFOLIO_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 
 interface ExternalLinkProps {
@@ -34,7 +34,7 @@ const ExternalLink = ({ forceDark = false }: ExternalLinkProps) => {
         >
           <Image
             src="/images/codex-logo.svg"
-            alt="Mirai logo"
+            alt="Code Editor logo"
             className="mr-2"
             width={16}
             height={16}
@@ -61,30 +61,13 @@ const ExternalLink = ({ forceDark = false }: ExternalLinkProps) => {
       </Button>
       <Button variant="outline" size="sm" asChild>
         <a
-          href={REPO_URL}
+          href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit CodeX GitHub repository (opens in new tab)"
+          aria-label="Visit LinkedIn profile (opens in new tab)"
         >
-          <Image
-            src={`/images/${resolvedTheme === 'light' && !forceDark ? 'octocat' : 'octocat-white'}.svg`}
-            alt="GitHub logo"
-            className="mr-2"
-            width={16}
-            height={16}
-          />
-          CodeX GitHub
-        </a>
-      </Button>
-      <Button variant="outline" size="sm" asChild>
-        <a
-          href={CONTACT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contact me (opens in new tab)"
-        >
-          <Send className="mr-2 size-4" />
-          Contact Me
+          <Linkedin className="mr-2 size-4" />
+          LinkedIn
         </a>
       </Button>
     </>

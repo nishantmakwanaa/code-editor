@@ -10,7 +10,7 @@
 
 import { CircleHelp } from 'lucide-react';
 
-import { PRE_INSTALLED_LIBS } from '@/lib/constants';
+import { DOCS_URL, PRE_INSTALLED_LIBS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Separator } from '@/components/ui/separator';
@@ -60,13 +60,13 @@ const HelpPopover = () => (
                 </li>
                 <li>
                   <a
-                    href="https://github.com/dulapahv/CodeX/blob/main/manual.md#live-preview-example"
+                    href={DOCS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground hover:text-muted-foreground inline-flex items-center gap-1 underline
                       underline-offset-2 !transition-all"
                   >
-                    See live preview examples
+                    See live preview examples on my website
                     <span className="sr-only">(opens in new tab)</span>
                   </a>
                 </li>

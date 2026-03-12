@@ -14,13 +14,20 @@ export const IS_DEV_ENV =
   process.env.NEXT_PUBLIC_ENV === 'development' ||
   process.env.NODE_ENV === 'development';
 
+const normalizeBaseUrl = (url: string) => url.replace(/\/$/, '');
+
 // Production: Vercel client + Render server (override with env if needed)
 export const BASE_CLIENT_URL =
-  process.env.NEXT_PUBLIC_BASE_CLIENT_URL ||
-  (IS_DEV_ENV ? 'http://localhost:3000' : 'https://online-collaborative-code-editor.vercel.app');
+  normalizeBaseUrl(
+    process.env.NEXT_PUBLIC_BASE_CLIENT_URL ||
+      (IS_DEV_ENV ? 'http://localhost:3000' : 'https://online-collaborative-code-editor.vercel.app')
+  );
 export const BASE_SERVER_URL =
-  process.env.NEXT_PUBLIC_BASE_SERVER_URL ||
-  (IS_DEV_ENV ? 'http://localhost:3001' : 'https://code-editor-s0l9.onrender.com');
+  normalizeBaseUrl(
+    process.env.NEXT_PUBLIC_BASE_SERVER_URL ||
+      process.env.NEXT_PUBLIC_SERVER_URL ||
+      (IS_DEV_ENV ? 'http://localhost:3001' : 'https://code-editor-s0l9.onrender.com')
+  );
 
 export const STATUS_URL = process.env.NEXT_PUBLIC_STATUS_URL || BASE_CLIENT_URL;
 export const KASCA_SERVER_MONITOR_ID = process.env.BETTERSTACK_MONITOR_ID || '';
@@ -47,6 +54,9 @@ export const PORTFOLIO_URL = process.env.NEXT_PUBLIC_PORTFOLIO_URL || 'https://n
 export const CONTACT_URL = process.env.NEXT_PUBLIC_CONTACT_URL || PORTFOLIO_URL;
 export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL || 'https://github.com/nishantmakwanaa';
 export const GITHUB_URL = process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/nishantmakwanaa';
+export const LINKEDIN_URL =
+  process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/in/nishantmakwanaa';
+export const DOCS_URL = process.env.NEXT_PUBLIC_DOCS_URL || PORTFOLIO_URL;
 
 export const EDITOR_SETTINGS_KEY = 'editor-settings';
 

@@ -17,7 +17,7 @@ const WelcomeMsg = () => (
     <div className="flex items-center gap-2 text-green-500">
       <Image
         src="/images/codex-logo.svg"
-        alt="CodeX Logo"
+        alt="Code Editor logo"
         className="size-5"
         width="16"
         height="16"
