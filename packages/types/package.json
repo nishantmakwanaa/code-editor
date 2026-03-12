@@ -6,27 +6,33 @@
   "exports": {
     "./message": {
       "types": "./dist/message.d.ts",
-      "default": "./dist/message.js"
+      "import": "./dist/message.js",
+      "default": "./message.ts"
     },
     "./operation": {
       "types": "./dist/operation.d.ts",
-      "default": "./dist/operation.js"
+      "import": "./dist/operation.js",
+      "default": "./operation.ts"
     },
     "./pointer": {
       "types": "./dist/pointer.d.ts",
-      "default": "./dist/pointer.js"
+      "import": "./dist/pointer.js",
+      "default": "./pointer.ts"
     },
     "./scroll": {
       "types": "./dist/scroll.d.ts",
-      "default": "./dist/scroll.js"
+      "import": "./dist/scroll.js",
+      "default": "./scroll.ts"
     },
     "./terminal": {
       "types": "./dist/terminal.d.ts",
-      "default": "./dist/terminal.js"
+      "import": "./dist/terminal.js",
+      "default": "./terminal.ts"
     },
     "./user": {
       "types": "./dist/user.d.ts",
-      "default": "./dist/user.js"
+      "import": "./dist/user.js",
+      "default": "./user.ts"
     }
   },
   "scripts": {
