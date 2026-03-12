@@ -80,14 +80,13 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
           <DialogHeader className="text-foreground text-left">
             <DialogTitle>{SITE_NAME}</DialogTitle>
             <DialogDescription className="pt-2 text-base">
-              This project is part of the course &quot;COMPSCI4025P Level 4 Individual Project&quot;
-              at the University of Glasgow.
+              This is final year project for my Gujarat Technological University project.
             </DialogDescription>
           </DialogHeader>
 
           <div className="relative aspect-[600/315]" aria-label="Code Editor application preview">
             <Image
-              src="/images/cover.png"
+              src="/images/gtu-project-cover.jpg"
               alt="Code Editor application interface preview"
               className="absolute rounded-md object-cover"
               fill
@@ -134,15 +133,14 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
         <DrawerHeader>
           <DrawerTitle className="text-left">{SITE_NAME}</DrawerTitle>
           <DrawerDescription className="pt-2 text-left text-base">
-            This project is part of the course &quot;COMPSCI4025P Level 4 Individual Project&quot;
-            at the University of Glasgow.
+            This is final year project for my Gujarat Technological University project.
           </DrawerDescription>
         </DrawerHeader>
 
         <div className="w-full px-4" aria-label="Code Editor application preview">
           <div className="relative aspect-[600/315] w-full max-w-full">
             <Image
-              src="/images/cover.png"
+              src="/images/gtu-project-cover.jpg"
               alt="Code Editor application interface preview"
               className="rounded-md object-cover"
               fill
