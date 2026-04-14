@@ -43,7 +43,6 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ['monaco-themes', '@codex/types'],
   webpack: (config, { isServer }) => {
-    // Bypass package.json exports field only for monaco-themes
     config.module.rules.push({
       test: /monaco-themes/,
       resolve: {

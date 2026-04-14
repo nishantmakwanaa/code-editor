@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/tests/*": ["./tests/*"]
+      "@/tests/*": ["./tests/*"],
+      "@codex/types/*": ["../../packages/types/*"]
     }
   },
   "include": [

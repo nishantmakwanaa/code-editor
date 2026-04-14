@@ -10,7 +10,9 @@
 
 // Set ALLOWED_ORIGINS env (comma-separated) to add more origins
 const ENV_ORIGINS = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',').map((o) => o.trim()).filter(Boolean)
+  ? process.env.ALLOWED_ORIGINS.split(',')
+      .map(o => o.trim())
+      .filter(Boolean)
   : [];
 
 const DEFAULT_ORIGINS = [
@@ -18,11 +20,17 @@ const DEFAULT_ORIGINS = [
   'https://online-collaborative-code-editor.vercel.app'
 ];
 
+const RENDER_PATTERN = /^https:\/\/[a-zA-Z0-9-]+\.onrender\.com$/;
+
 const ALLOWED_ORIGINS = [...DEFAULT_ORIGINS, ...ENV_ORIGINS] as readonly string[];
 
 const isVercelDeployment = (origin: string): boolean => {
   const VERCEL_PATTERN = /^https:\/\/[a-zA-Z0-9-]+\.vercel\.app$/;
   return VERCEL_PATTERN.test(origin);
+};
+
+const isRenderDeployment = (origin: string): boolean => {
+  return RENDER_PATTERN.test(origin);
 };
 
 const getAllowedOrigin = (origin: string | undefined): string => {
@@ -33,7 +41,11 @@ const getAllowedOrigin = (origin: string | undefined): string => {
 
   if (!origin) return '*';
 
-  if (ALLOWED_ORIGINS.includes(origin) || isVercelDeployment(origin)) {
+  if (
+    ALLOWED_ORIGINS.includes(origin) ||
+    isVercelDeployment(origin) ||
+    isRenderDeployment(origin)
+  ) {
     return origin;
   }
 
