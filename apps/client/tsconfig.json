@@ -20,7 +20,6 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@/tests/*": ["./tests/*"],
       "@codex/types/*": ["../../packages/types/*"]
     }
   },

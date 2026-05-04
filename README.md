@@ -34,9 +34,6 @@ For detailed usage instructions and feature documentation, please see the **[Use
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
   - [Development](#development)
-  - [Test](#test)
-    - [Frontend Test](#frontend-test)
-    - [Backend Test](#backend-test)
   - [Build](#build)
   - [Deployment](#deployment)
   - [Scripts](#scripts)
@@ -60,12 +57,10 @@ Code Editor
 │   │   │   ├── components/ # React components
 │   │   │   ├── hooks/      # Custom React hooks
 │   │   │   └── lib/        # Utility functions and services
-│   │   └── tests/          # Frontend tests (Playwright)
 │   └── server/             # Backend Socket.IO server
 │       ├── src/            # Source code
 │       │   ├── service/    # Backend services
 │       │   └── utils/      # Utility functions
-│       └── tests/          # Backend tests (Jest)
 ├── docs/                   # Documentation assets
 ├── packages/               # Shared packages
 │   └── types/              # Shared TypeScript types and interfaces
@@ -137,39 +132,6 @@ The application will be available at:
 - Frontend: <http://localhost:3000>
 - Backend: <http://localhost:3001>
 
-## Test
-
-All test commands can be run from both the root directory and their respective workspaces.
-
-### Frontend Test
-
-Both the frontend server and the backend server will start automatically. To run the frontend tests:
-
-```bash
-# In root directory or client workspace
-pnpm test:client            # Run all frontend E2E tests
-pnpm test:client:ui         # Run frontend tests with UI mode
-pnpm test:client:debug      # Debug frontend tests
-pnpm test:client:report     # View frontend test report
-
-# Run in client workspace only
-pnpm --filter client test:client
-```
-
-### Backend Test
-
-The backend server will start automatically. To run the backend tests:
-
-```bash
-# In root directory or server workspace
-pnpm test:server            # Run backend tests against local server
-pnpm test:server:remote     # Run backend tests against remote server
-pnpm test:server:watch      # Run backend tests in watch mode (local server)
-
-# Run in server workspace only
-pnpm --filter server test:server
-```
-
 ## Build
 
 This project is configured to build both the frontend and backend applications together with caching from Turborepo. To build the entire project:
@@ -235,15 +197,6 @@ pnpm build:client           # Build frontend
 pnpm build:server           # Build backend
 pnpm clean                  # Clean all builds, caches, test results, and node_modules
 
-# Testing
-pnpm test:client            # Run frontend E2E tests (Playwright)
-pnpm test:client:ui         # Run frontend tests with UI mode
-pnpm test:client:debug      # Debug frontend tests
-pnpm test:client:report     # View frontend test report
-pnpm test:server            # Run backend tests against local server
-pnpm test:server:remote     # Run backend tests against remote server
-pnpm test:server:watch      # Run backend tests in watch mode (local server)
-
 # Linting and Formatting
 pnpm lint                   # Run ESLint checks (frontend only)
 pnpm lint:fix               # Fix ESLint issues (frontend only)
@@ -259,12 +212,10 @@ You can also run scripts in the specific workspaces
 # Frontend specific
 pnpm --filter client dev
 pnpm --filter client build
-pnpm --filter client test:e2e
 
 # Backend specific
 pnpm --filter server dev
 pnpm --filter server build
-pnpm --filter server test:socket
 ```
 
 ## Tech Stack
@@ -284,10 +235,6 @@ pnpm --filter server test:socket
   - [Node.js](https://nodejs.org)
   - [TypeScript](https://www.typescriptlang.org)
   - [Socket.IO](https://socket.io) (binded to [µWebSockets.js](https://github.com/uNetworking/uWebSockets.js) server)
-- **Testing:**
-  - [Playwright](https://playwright.dev) (end-to-end testing for frontend)
-  - [Jest](https://jestjs.io) (unit testing for backend)
-  - [CodeQL](https://codeql.github.com/) (security analysis)
 - **Code Quality:**
   - [ESLint](https://eslint.org) (static code analysis)
   - [Prettier](https://prettier.io) (code formatting)
