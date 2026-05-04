@@ -58,4 +58,4 @@ const getCorsHeaders = (origin: string | undefined) => ({
   Vary: 'Origin'
 });
 
-export { ALLOWED_ORIGINS, getCorsHeaders, isVercelDeployment };
+export { ALLOWED_ORIGINS, getCorsHeaders, isRenderDeployment, isVercelDeployment };
