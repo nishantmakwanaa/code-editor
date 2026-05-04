@@ -19,6 +19,7 @@ import { BASE_CLIENT_URL, NAME, PORTFOLIO_URL, SITE_DESCRIPTION, SITE_NAME } fro
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Analytics } from '@/components/analytics';
+import { RenderKeepalive } from '@/components/render-keepalive';
 import { ThemeProvider } from '@/components/theme-provider';
 
 import './globals.css';
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       </head>
       <body className="h-dvh text-pretty antialiased">
         <Analytics />
+        <RenderKeepalive />
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <TooltipProvider>{children}</TooltipProvider>
           <Toaster
