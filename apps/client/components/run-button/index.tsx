@@ -22,7 +22,6 @@ import { getSocket } from '@/lib/socket';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
-import { AboutPopover } from './components/about-popover';
 import { ArgsInputPopover } from './components/args-stdin-popover';
 import { cancelExecution, executeCode } from './utils';
 
@@ -95,8 +94,6 @@ const RunButton = ({ monaco, editor, setOutput, className }: RunButtonProps) => 
           disabled={isRunning || !editor}
         />
       </div>
-
-      <AboutPopover />
     </div>
   );
 };

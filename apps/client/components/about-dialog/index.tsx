@@ -110,7 +110,7 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
             <p className="text-center">
               Built by <span className="font-medium">Nishant Makwana</span>
             </p>
-            <nav className="grid grid-cols-3 gap-2" aria-label="External links">
+            <nav className="flex items-center justify-center gap-2" aria-label="External links">
               <ExternalLink forceDark={forceDark} />
             </nav>
           </div>
@@ -167,7 +167,7 @@ const AboutDialog = forwardRef<AboutDialogRef, AboutDialogProps>(({ forceDark = 
           <p className="text-center">
             Built by <span className="font-medium">Nishant Makwana</span>
           </p>
-          <nav className="grid grid-cols-2 gap-2" aria-label="External links">
+          <nav className="flex items-center justify-center gap-2" aria-label="External links">
             <ExternalLink forceDark={forceDark} />
           </nav>
         </div>

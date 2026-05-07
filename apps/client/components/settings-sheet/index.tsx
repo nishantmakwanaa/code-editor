@@ -227,7 +227,7 @@ const SettingsSheet = forwardRef<SettingsSheetRef, SettingsSheetProps>(
                 Customize the appearance of the editor and other settings. For more information on
                 editor settings, refer to the{' '}
                 <a
-                  href="https://microsoft.github.io/monaco-editor/typedoc/variables/editor.EditorOptions.html"
+                  href="https://microsoft.github.io/monaco-editor/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground hover:text-muted-foreground font-medium underline underline-offset-2 !transition-all"

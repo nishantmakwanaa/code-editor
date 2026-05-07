@@ -30,7 +30,6 @@ import {
   Folder,
   FolderGit2,
   FoldVertical,
-  HelpCircle,
   Info,
   LayoutTemplate,
   LogOut,
@@ -359,11 +358,6 @@ export const createMenuConfig = (
     {
       label: 'Help',
       items: [
-        {
-          label: 'Manual',
-          icon: <HelpCircle className="mr-2 size-4" />,
-          action: 'manual'
-        },
         {
           label: 'About',
           icon: <Info className="mr-2 size-4" />,
