@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { BASE_SERVER_URL } from '@/lib/constants';
 
-const KEEPALIVE_INTERVAL_MS = 10 * 60 * 1000; // 10 minutes
+const KEEPALIVE_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
 
 const pingBackend = async (): Promise<void> => {
   try {

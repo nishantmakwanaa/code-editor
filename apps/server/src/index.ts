@@ -77,6 +77,25 @@ app.listen(PORT, token => {
     console.warn(`Port ${PORT} is already in use`);
   }
   console.log(`codex-server listening on port: ${PORT}`);
+
+  // Self-ping to keep Render free-tier server awake (every 5 minutes)
+  const SELF_URL =
+    process.env.RENDER_EXTERNAL_URL || 'https://code-editor-s0l9.onrender.com';
+
+  if (process.env.RENDER) {
+    const KEEPALIVE_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
+
+    const selfPing = async () => {
+      try {
+        await fetch(SELF_URL);
+      } catch {
+        // Silently ignore – server may be starting up
+      }
+    };
+
+    setInterval(selfPing, KEEPALIVE_INTERVAL_MS);
+    console.log(`Self-ping keepalive enabled (every 5 min) → ${SELF_URL}`);
+  }
 });
 
 app.get('/', (res, req) => {
