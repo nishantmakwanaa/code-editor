@@ -50,20 +50,37 @@ const LanguageSelection = memo(
 
     const [open, setOpen] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState(defaultLanguage);
+    const [runnableIds, setRunnableIds] = useState<Set<string> | null>(null);
 
-    // Memoize languages array to prevent unnecessary recalculations
+    useEffect(() => {
+      fetch('/api/runtimes', { cache: 'no-store' })
+        .then(res => (res.ok ? res.json() : null))
+        .then((data: { monacoIds?: string[] } | null) => {
+          if (data?.monacoIds?.length) {
+            setRunnableIds(new Set(data.monacoIds));
+          }
+        })
+        .catch(() => {
+          // Keep full Monaco list if the code runner is unreachable
+        });
+    }, []);
+
+    // Only show languages installed on Piston when we know the list
     const languages = useMemo(() => {
       if (!monaco) return [];
 
-      return monaco.languages.getLanguages().map(
-        language =>
-          ({
-            alias: language.aliases?.[0] || 'Unknown',
-            extensions: language.extensions || [],
-            id: language.id
-          }) as Language
-      );
-    }, [monaco]);
+      return monaco.languages
+        .getLanguages()
+        .filter(language => !runnableIds || runnableIds.has(language.id))
+        .map(
+          language =>
+            ({
+              alias: language.aliases?.[0] || language.id,
+              extensions: language.extensions || [],
+              id: language.id
+            }) as Language
+        );
+    }, [monaco, runnableIds]);
 
     const handleSelect = useCallback(
       (currentValue: string) => {

@@ -16,7 +16,7 @@ import type * as monaco from 'monaco-editor';
 import { CodeServiceMsg } from '@codex/types/message';
 import { ExecutionResultType, type ExecutionResult } from '@codex/types/terminal';
 
-import { DOCS_URL } from '@/lib/constants';
+import { SUPPORT_URL } from '@/lib/constants';
 import { getSocket } from '@/lib/socket';
 import { parseError } from '@/lib/utils';
 
@@ -129,9 +129,16 @@ export const executeCode = async (
     });
 
     if (!response.ok) {
-      throw new Error(
-        `HTTP error! status: ${response.status}\nThis language may not be supported or the server is down.\nMore details: ${DOCS_URL}.`
-      );
+      let detail =
+        'This language may not be supported, or the code runner (Piston) is not running.';
+      try {
+        const errBody = (await response.json()) as { error?: string };
+        if (errBody.error) detail = errBody.error;
+      } catch {
+        // Response body was not JSON
+      }
+      const supportLine = SUPPORT_URL ? `\nMore details: ${SUPPORT_URL}` : '';
+      throw new Error(`HTTP error! status: ${response.status}\n${detail}${supportLine}`);
     }
 
     const result: ExecutionResult = await response.json();

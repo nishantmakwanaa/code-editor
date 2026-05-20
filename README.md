@@ -109,6 +109,10 @@ After checking the [prerequisites](#prerequisites) above, follow these steps to 
 
     > For local development, optional: GitHub OAuth, Sentry, Better Stack. For production (Vercel + Render), set the env vars listed in the deployment section.
 
+4. **Code runner** — uses [Judge0 CE](https://ce.judge0.com) by default (free, no Docker, 25+ languages). The public emkc.org Piston API is whitelist-only.
+
+    Optional self-hosted Piston: `pnpm piston:up` && `pnpm piston:install`, then in `apps/client/.env` set `CODE_RUNNER_PROVIDER=piston` and `PISTON_API_URL=http://localhost:2000/api/v2/execute`.
+
 ## Development
 
 To start the development server for both the frontend and backend applications:
@@ -171,6 +175,11 @@ Deploy frontend to [Vercel](https://vercel.com) and backend to [Render](https://
 |----------|-------------------|-------------|
 | `NEXT_PUBLIC_BASE_CLIENT_URL` | Yes (Vercel) | Your frontend URL, e.g. `https://your-app.vercel.app` |
 | `NEXT_PUBLIC_BASE_SERVER_URL` | Yes (Vercel) | Your backend URL, e.g. `https://your-server.onrender.com` |
+| `CODE_RUNNER_PROVIDER` | Optional | `judge0` (default) or `piston` |
+| `JUDGE0_API_URL` | Optional | Judge0 host (default `https://ce.judge0.com`) |
+| `JUDGE0_AUTH_TOKEN` | Optional | If your Judge0 instance requires auth |
+| `PISTON_API_URL` | If using Piston | e.g. `http://localhost:2000/api/v2/execute` |
+| `PISTON_API_KEY` | Optional | Bearer token for self-hosted Piston |
 | `GITHUB_CLIENT_SECRET_DEV` | Optional | GitHub OAuth (dev) |
 | `GITHUB_CLIENT_SECRET_PROD` | Optional | GitHub OAuth (prod) |
 | `BETTERSTACK_API_KEY` | Optional | Status page / uptime |
@@ -182,6 +191,8 @@ Deploy frontend to [Vercel](https://vercel.com) and backend to [Render](https://
 | Variable | Required for prod | Description |
 |----------|-------------------|-------------|
 | `ALLOWED_ORIGINS` | Yes (Render) | Comma-separated client URLs, e.g. `https://your-app.vercel.app` |
+| `PORT` | Optional | Listen port (Render sets this automatically) |
+| `SERVER_PUBLIC_URL` | Optional | Public server URL for keepalive self-ping (Render uses `RENDER_EXTERNAL_URL`) |
 
 Deploy client first, then set `NEXT_PUBLIC_BASE_CLIENT_URL` and `NEXT_PUBLIC_BASE_SERVER_URL` on Vercel, and `ALLOWED_ORIGINS` on Render to your Vercel URL.
 

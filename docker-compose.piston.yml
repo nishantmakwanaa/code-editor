@@ -1,0 +1,15 @@
+# Self-hosted code runner for local development.
+# After first start, install languages: pnpm piston:install
+services:
+  piston:
+    image: ghcr.io/engineer-man/piston:latest
+    container_name: codex-piston
+    privileged: true
+    ports:
+      - '2000:2000'
+    volumes:
+      - piston-data:/piston
+    restart: unless-stopped
+
+volumes:
+  piston-data:

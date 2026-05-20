@@ -14,6 +14,8 @@
     "format": "prettier --check **/*.{js,mjs,jsx,ts,tsx,json}",
     "format:fix": "prettier --write **/*.{js,mjs,jsx,ts,tsx,json}",
     "clean": "node scripts/clean.js",
+    "piston:up": "docker compose -f docker-compose.piston.yml up -d",
+    "piston:install": "bash scripts/piston-install-langs.sh",
     "prepare": "husky"
   },
   "lint-staged": {

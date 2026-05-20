@@ -15,14 +15,17 @@ const ENV_ORIGINS = process.env.ALLOWED_ORIGINS
       .filter(Boolean)
   : [];
 
-const DEFAULT_ORIGINS = [
-  'http://localhost:3000',
-  'https://online-collaborative-code-editor.vercel.app'
-];
+const DEV_DEFAULT_ORIGIN = 'http://localhost:3000';
 
 const RENDER_PATTERN = /^https:\/\/[a-zA-Z0-9-]+\.onrender\.com$/;
 
-const ALLOWED_ORIGINS = [...DEFAULT_ORIGINS, ...ENV_ORIGINS] as readonly string[];
+const ALLOWED_ORIGINS = (
+  ENV_ORIGINS.length > 0
+    ? ENV_ORIGINS
+    : process.env.NODE_ENV === 'development'
+      ? [DEV_DEFAULT_ORIGIN]
+      : []
+) as readonly string[];
 
 const isVercelDeployment = (origin: string): boolean => {
   const VERCEL_PATTERN = /^https:\/\/[a-zA-Z0-9-]+\.vercel\.app$/;
@@ -33,10 +36,17 @@ const isRenderDeployment = (origin: string): boolean => {
   return RENDER_PATTERN.test(origin);
 };
 
+const isLocalDevOrigin = (origin: string): boolean =>
+  /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+
+const defaultOrigin = (): string => ENV_ORIGINS[0] || ALLOWED_ORIGINS[0] || DEV_DEFAULT_ORIGIN;
+
 const getAllowedOrigin = (origin: string | undefined): string => {
+  const isProduction = process.env.NODE_ENV === 'production';
+
   // For security, avoid returning '*' in production
-  if (process.env.NODE_ENV === 'production' && !origin) {
-    return ALLOWED_ORIGINS[0];
+  if (isProduction && !origin) {
+    return defaultOrigin();
   }
 
   if (!origin) return '*';
@@ -44,12 +54,13 @@ const getAllowedOrigin = (origin: string | undefined): string => {
   if (
     ALLOWED_ORIGINS.includes(origin) ||
     isVercelDeployment(origin) ||
-    isRenderDeployment(origin)
+    isRenderDeployment(origin) ||
+    (!isProduction && isLocalDevOrigin(origin))
   ) {
     return origin;
   }
 
-  return ENV_ORIGINS[0] || ALLOWED_ORIGINS[0];
+  return defaultOrigin();
 };
 
 const getCorsHeaders = (origin: string | undefined) => ({

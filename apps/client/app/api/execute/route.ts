@@ -1,19 +1,10 @@
 /**
  * API route handler for executing code submissions.
- * Makes requests to Piston API for code execution with:
- * - Input validation
- * - Request cancellation support
- * - Execution metadata
- * - Error handling
- *
- * By Nishant Makwana (https://nishantmakwanaa.lovable.app)
  */
 
 import { NextResponse } from 'next/server';
 
-// export const runtime = 'edge';
-
-const PISTON_API_URL = 'https://emkc.org/api/v2/piston/execute';
+import { getCodeRunner } from '@/lib/code-runner';
 
 interface RequestBody {
   code: string;
@@ -26,7 +17,6 @@ export async function POST(request: Request) {
   try {
     const body: RequestBody = await request.json();
 
-    // Validate request body
     if (!body.code) {
       return NextResponse.json({ error: 'Code is required' }, { status: 400 });
     }
@@ -35,54 +25,48 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Language is required' }, { status: 400 });
     }
 
-    const controller = new AbortController();
-    request.signal.addEventListener('abort', () => {
-      controller.abort();
-    });
+    const runner = getCodeRunner();
+    const runtimes = await runner.listRuntimes();
 
-    const response = await fetch(PISTON_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        language: body.language.toLowerCase(),
-        version: '*',
-        files: [{ content: body.code }],
-        stdin: body.stdin || '',
-        args: Array.isArray(body.args) ? body.args : [],
-        run_timeout: 30000, // 30 seconds timeout
-        compile_timeout: 30000
-      }),
-      signal: controller.signal
-    });
-
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    // Add execution metadata to response
-    const metadata = {
-      args: body.args || [],
-      stdin: body.stdin || '',
-      timestamp: new Date().toISOString()
-    };
-
-    return NextResponse.json({
-      ...data,
-      metadata
-    });
-  } catch (error) {
-    if (error instanceof DOMException && error.name === 'AbortError') {
+    if (!runner.supportsLanguage(body.language, runtimes)) {
       return NextResponse.json(
-        { error: 'Code execution cancelled' },
-        { status: 499 } // Using 499 Client Closed Request
+        { error: runner.formatNotFoundError(body.language, runtimes) },
+        { status: 400 }
       );
     }
 
+    const controller = new AbortController();
+    request.signal.addEventListener('abort', () => controller.abort());
+
+    const result = await runner.execute({
+      code: body.code,
+      language: body.language,
+      stdin: body.stdin,
+      args: body.args,
+      signal: controller.signal
+    });
+
+    const metadata = {
+      args: body.args || [],
+      stdin: body.stdin || '',
+      timestamp: new Date().toISOString(),
+      runner: runner.provider
+    };
+
+    return NextResponse.json({ ...result, metadata });
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      return NextResponse.json({ error: 'Code execution cancelled' }, { status: 499 });
+    }
+
     console.error('Code execution error:', error);
-    return NextResponse.json({ error: 'Failed to execute code' }, { status: 500 });
+    const message =
+      error instanceof Error && error.message.includes('fetch failed')
+        ? 'Cannot reach the code runner. Check your network or CODE_RUNNER_PROVIDER settings.'
+        : error instanceof Error
+          ? error.message
+          : 'Failed to execute code';
+
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

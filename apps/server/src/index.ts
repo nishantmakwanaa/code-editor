@@ -39,14 +39,14 @@ import {
   isVercelDeployment
 } from './cors-config';
 
-const PORT = 3001;
+const PORT = Number(process.env.PORT) || 3001;
 
 const app = App();
 
 const io = new Server({
   cors: {
     origin: (origin, callback) => {
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV !== 'production') {
         callback(null, true);
         return;
       }
@@ -79,10 +79,9 @@ app.listen(PORT, token => {
   console.log(`codex-server listening on port: ${PORT}`);
 
   // Self-ping to keep Render free-tier server awake (every 5 minutes)
-  const SELF_URL =
-    process.env.RENDER_EXTERNAL_URL || 'https://code-editor-s0l9.onrender.com';
+  const SELF_URL = process.env.SERVER_PUBLIC_URL || process.env.RENDER_EXTERNAL_URL;
 
-  if (process.env.RENDER) {
+  if (process.env.RENDER && SELF_URL) {
     const KEEPALIVE_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
 
     const selfPing = async () => {
@@ -107,7 +106,11 @@ app.get('/', (res, req) => {
   });
   res.writeHeader('Content-Type', 'text/plain');
 
-  res.end('Hello from codex-server! Go to https://codex.dulapahv.dev/ to start coding.');
+  const clientUrl = ALLOWED_ORIGINS[0];
+  const greeting = clientUrl
+    ? `Hello from codex-server! Go to ${clientUrl} to start coding.`
+    : 'Hello from codex-server!';
+  res.end(greeting);
 });
 
 io.on('connection', socket => {
