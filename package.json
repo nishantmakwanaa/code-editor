@@ -52,5 +52,8 @@
     "patchedDependencies": {
       "monaco-themes": "patches/monaco-themes.patch"
     }
+  },
+  "dependencies": {
+    "pnpm": "^11.20.0"
   }
 }

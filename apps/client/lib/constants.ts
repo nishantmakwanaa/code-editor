@@ -20,12 +20,10 @@ const devClientUrl = 'http://localhost:3000';
 const devServerUrl = 'http://localhost:3001';
 
 export const BASE_CLIENT_URL = normalizeBaseUrl(
-  process.env.NEXT_PUBLIC_BASE_CLIENT_URL || (IS_DEV_ENV ? devClientUrl : '')
+  process.env.NEXT_PUBLIC_BASE_CLIENT_URL || devClientUrl
 );
 export const BASE_SERVER_URL = normalizeBaseUrl(
-  process.env.NEXT_PUBLIC_BASE_SERVER_URL ||
-    process.env.NEXT_PUBLIC_SERVER_URL ||
-    (IS_DEV_ENV ? devServerUrl : '')
+  process.env.NEXT_PUBLIC_BASE_SERVER_URL || process.env.NEXT_PUBLIC_SERVER_URL || devServerUrl
 );
 
 export const STATUS_URL = process.env.NEXT_PUBLIC_STATUS_URL || BASE_CLIENT_URL;

@@ -292,7 +292,29 @@
 }
 
 .mdxeditor-source-editor > .cm-editor {
-  @apply bg-white;
+  @apply bg-background;
+}
+
+/* Sandpack live preview styling overrides */
+.sp-wrapper,
+.sp-layout,
+.sp-preview,
+.sp-preview-container,
+.sp-preview-iframe {
+  background-color: var(--panel-background, #111827) !important;
+  border: none !important;
+}
+
+.sp-header,
+.sp-preview-actions,
+.sp-tabs,
+.sp-tab-button {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
 
 .mdxeditor-source-editor .cm-gutterElement {

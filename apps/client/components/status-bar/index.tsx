@@ -64,9 +64,8 @@ const StatusBar = memo(function StatusBar({
       aria-label="Editor status bar"
     >
       <div
-        className={
-          'flex items-center justify-end gap-x-2 px-2 text-xs text-[color:var(--status-bar-text)]'
-        }
+        className={`flex items-center justify-between gap-x-1 px-1.5 text-[11px] text-[color:var(--status-bar-text)]
+          sm:justify-end sm:gap-x-2 sm:px-2 sm:text-xs`}
       >
         <div className="flex items-center">
           <MemoizedLanguageLabel />

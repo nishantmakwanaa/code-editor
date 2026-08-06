@@ -19,6 +19,7 @@ import { CodeServiceMsg, ScrollServiceMsg } from '@codex/types/message';
 import type { Cursor, EditOp } from '@codex/types/operation';
 
 import { EDITOR_SETTINGS_KEY } from '@/lib/constants';
+import { getMonacoThemeData } from '@/lib/monaco-theme-loader';
 import { storage } from '@/lib/services/storage';
 import { getSocket } from '@/lib/socket';
 import type { StatusBarCursorPosition } from '@/components/status-bar';
@@ -29,9 +30,10 @@ import type { StatusBarCursorPosition } from '@/components/status-bar';
  */
 export const handleBeforeMount = (monaco: Monaco): void => {
   Object.entries(themeList).forEach(([key, value]) => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const themeData = require(`monaco-themes/themes/${value}.json`);
-    monaco.editor.defineTheme(key, themeData);
+    const themeData = getMonacoThemeData(value) || getMonacoThemeData(key);
+    if (themeData) {
+      monaco.editor.defineTheme(key, themeData as unknown as monaco.editor.IStandaloneThemeData);
+    }
   });
 };
 
@@ -57,9 +59,21 @@ export const handleOnMount = (
   }
   editor.focus();
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   editor.updateOptions({
     cursorSmoothCaretAnimation: 'on',
-    fontFamily: "GeistMono, Consolas, 'Courier New', monospace"
+    fontFamily: "GeistMono, Consolas, 'Courier New', monospace",
+    accessibilitySupport: 'off',
+    overviewRulerLanes: 0,
+    hideCursorInOverviewRuler: true,
+    ...(isMobile && {
+      minimap: { enabled: false },
+      wordWrap: 'on',
+      fontSize: 13,
+      lineNumbersMinChars: 3,
+      padding: { top: 8, bottom: 8 }
+    })
   });
 
   const savedSettings = localStorage.getItem(EDITOR_SETTINGS_KEY);

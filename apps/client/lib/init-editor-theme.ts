@@ -10,7 +10,8 @@
  */
 
 import type { Monaco } from '@monaco-editor/react';
-import themeList from 'monaco-themes/themes/themelist.json';
+
+import { getMonacoThemeData } from '@/lib/monaco-theme-loader';
 
 const DEFAULT_THEMES = {
   'vs-dark': {
@@ -103,29 +104,31 @@ export const initEditorTheme = () => {
     } else {
       // For custom themes
       try {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const themeData = require(
-          `monaco-themes/themes/${themeList[savedTheme as keyof typeof themeList]}.json`
-        );
+        const themeData = getMonacoThemeData(savedTheme);
 
-        // Set document classes for dark mode
-        if (themeData.base === 'vs-dark') {
-          document.documentElement.classList.add('dark');
-          document.documentElement.classList.remove('light');
-        } else {
-          document.documentElement.classList.remove('dark');
-          document.documentElement.classList.add('light');
+        if (themeData) {
+          // Set document classes for dark mode
+          if (themeData.base === 'vs-dark') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          }
+
+          setCSSVariables({
+            '--toolbar-bg-primary':
+              themeData.colors['editor.selectionBackground']?.slice(0, 7) || '#2678ca',
+            '--toolbar-bg-secondary':
+              themeData.colors['editor.selectionBackground']?.slice(0, 7) || '#3c3c3c',
+            '--toolbar-foreground': themeData.colors['editor.foreground']?.slice(0, 7) || '#fff',
+            '--toolbar-accent':
+              themeData.colors['editorCursor.foreground']?.slice(0, 7) || '#2678ca',
+            '--panel-text-accent': themeData.colors['editor.background']?.slice(0, 7) || '#fff',
+            '--panel-background': themeData.colors['editor.background']?.slice(0, 7) || '#1e1e1e',
+            '--status-bar-text': themeData.base === 'vs-dark' ? 'dark' : 'light'
+          });
         }
-
-        setCSSVariables({
-          '--toolbar-bg-primary': themeData.colors['editor.selectionBackground'].slice(0, 7),
-          '--toolbar-bg-secondary': themeData.colors['editor.selectionBackground'].slice(0, 7),
-          '--toolbar-foreground': themeData.colors['editor.foreground'].slice(0, 7),
-          '--toolbar-accent': themeData.colors['editorCursor.foreground'].slice(0, 7),
-          '--panel-text-accent': themeData.colors['editor.background'].slice(0, 7),
-          '--panel-background': themeData.colors['editor.background'].slice(0, 7),
-          '--status-bar-text': themeData.base === 'vs-dark' ? 'dark' : 'light'
-        });
       } catch (error) {
         console.error('Failed to load theme:', error);
       }
@@ -187,27 +190,30 @@ export const applyEditorTheme = (key: string, value: string) => {
     }
   } else {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const themeData = require(`monaco-themes/themes/${value}.json`);
+      const themeData = getMonacoThemeData(value) || getMonacoThemeData(key);
 
-      // Set document classes
-      if (themeData.base === 'vs-dark') {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-      } else {
-        document.documentElement.classList.remove('dark');
-        document.documentElement.classList.add('light');
+      if (themeData) {
+        // Set document classes
+        if (themeData.base === 'vs-dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+
+        setCSSVariables({
+          '--toolbar-bg-primary':
+            themeData.colors['editor.selectionBackground']?.slice(0, 7) || '#2678ca',
+          '--toolbar-bg-secondary':
+            themeData.colors['editor.selectionBackground']?.slice(0, 7) || '#3c3c3c',
+          '--toolbar-foreground': themeData.colors['editor.foreground']?.slice(0, 7) || '#fff',
+          '--toolbar-accent': themeData.colors['editorCursor.foreground']?.slice(0, 7) || '#2678ca',
+          '--panel-text-accent': themeData.colors['editor.background']?.slice(0, 7) || '#fff',
+          '--panel-background': themeData.colors['editor.background']?.slice(0, 7) || '#1e1e1e',
+          '--status-bar-text': themeData.base === 'vs-dark' ? 'dark' : 'light'
+        });
       }
-
-      setCSSVariables({
-        '--toolbar-bg-primary': themeData.colors['editor.selectionBackground'].slice(0, 7),
-        '--toolbar-bg-secondary': themeData.colors['editor.selectionBackground'].slice(0, 7),
-        '--toolbar-foreground': themeData.colors['editor.foreground'].slice(0, 7),
-        '--toolbar-accent': themeData.colors['editorCursor.foreground'].slice(0, 7),
-        '--panel-text-accent': themeData.colors['editor.background'].slice(0, 7),
-        '--panel-background': themeData.colors['editor.background'].slice(0, 7),
-        '--status-bar-text': themeData.base === 'vs-dark' ? 'dark' : 'light'
-      });
     } catch (error) {
       console.error('Failed to load theme:', error);
     }
@@ -224,9 +230,8 @@ export const applyEditorTheme = (key: string, value: string) => {
     return 'light';
   } else {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const themeData = require(`monaco-themes/themes/${value}.json`);
-      return themeData.base === 'vs-dark' ? 'dark' : 'light';
+      const themeData = getMonacoThemeData(value) || getMonacoThemeData(key);
+      return themeData?.base === 'vs-dark' ? 'dark' : 'light';
     } catch (error) {
       console.error('Failed to determine theme mode:', error);
       return 'dark';

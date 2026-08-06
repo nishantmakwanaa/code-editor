@@ -80,7 +80,7 @@ const Terminal = ({ results, setResults }: TerminalProps) => {
           </Tooltip>
         </TooltipProvider>
       </div>
-      <div ref={terminalRef} className="h-full overflow-y-auto p-4">
+      <div ref={terminalRef} className="h-full overflow-y-auto p-2 sm:p-3">
         <div
           className="*:border-muted-foreground/40 flex flex-col space-y-2 divide-y whitespace-pre-wrap font-mono text-sm
             *:pt-2"

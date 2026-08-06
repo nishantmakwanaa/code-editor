@@ -16,6 +16,7 @@ import themeList from 'monaco-themes/themes/themelist.json';
 import { useTheme } from 'next-themes';
 
 import { applyEditorTheme, initEditorTheme, registerMonaco } from '@/lib/init-editor-theme';
+import { getMonacoThemeData } from '@/lib/monaco-theme-loader';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -102,11 +103,8 @@ const EditorThemeSettings = ({ monaco }: EditorThemeSettingsProps) => {
         setTheme('light');
       } else {
         try {
-          // eslint-disable-next-line @typescript-eslint/no-require-imports
-          const themeData = require(
-            `monaco-themes/themes/${themeList[savedTheme as keyof typeof themeList]}.json`
-          );
-          setTheme(themeData.base === 'vs-dark' ? 'dark' : 'light');
+          const themeData = getMonacoThemeData(savedTheme);
+          setTheme(themeData?.base === 'vs-dark' ? 'dark' : 'light');
         } catch (error) {
           console.error('Failed to sync theme:', error);
         }
